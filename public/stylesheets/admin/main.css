@@ -1,7 +1,8 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif; }
+  font-family: sans-serif;
+  font-size: 12px; }
 
 form p label {
   display: block;
@@ -51,6 +52,23 @@ form p label {
 
 #local_content {
   margin-left: 201px; }
+
+.admin_table {
+  width: 600px; }
+.admin_table th {
+  padding: 4px;
+  border: 1px solid #004e7f;
+  background: #cedde6; }
+.admin_table td {
+  padding: 3px;
+  border: 1px solid #cedde6; }
+
+#konsultacje_table #dzien {
+  width: 150px; }
+#konsultacje_table #godziny {
+  width: 150px; }
+#konsultacje_table #akcje {
+  width: 60px; }
 
 /* ------- stopka ------- */
 #footer {

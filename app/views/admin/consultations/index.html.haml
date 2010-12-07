@@ -2,3 +2,41 @@
 
 %h3 Konsultacje
 
+%table.admin_table#konsultacje_table
+  %thead
+    %tr
+      %th#dzien Dzień tygodnia
+      %th#godziny Godziny
+      %th#uwagi Uwagi
+      %th#akcje Działania
+  %tbody
+    - @consultations.each do |c|
+      %tr
+        %td= c.day
+        %td
+          = c.start.strftime("%H:%M")
+          \-
+          = c.end.strftime("%H:%M")
+        %td
+          - if c.comments.nil? || c.comments.empty?
+            \---
+          - else
+            = c.comments
+        %td
+          = link_to "usuń", admin_consultation_path(c), :confirm => "Czy na pewno usunąć?", :method => :delete
+
+%h3 Dodaj nowe konsultacje
+
+- form_for [:admin, @consult] do |f|
+  %p
+    = f.label :day, "Dzień tygodnia"
+    = f.select :day, [["poniedziałek"], ["wtorek"], ["środa"], ["czwartek"], ["piątek"], ["sobota"], ["niedziela"]]
+  %p
+    = f.label :start, "Godziny"
+    = f.text_field :start, :size => 4, :value => Time.now.strftime("%H") + ":00"
+    \-
+    = f.text_field :end, :size => 4
+  %p
+    = f.label :comments, "Uwagi"
+    = f.text_area :comments, :cols => 60, :rows => 5
+  %p= f.submit "Dodaj"

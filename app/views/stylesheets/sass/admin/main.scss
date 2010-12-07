@@ -11,6 +11,7 @@ body {
 	margin: 0;
 	padding: 0;
 	font-family: sans-serif;
+	font-size: 12px;
 }
 
 form {
@@ -87,6 +88,35 @@ form {
 
 #local_content {
 	margin-left: 201px;
+}
+
+.admin_table {
+	width: 600px;
+
+	th {
+		padding: 4px;
+		border: 1px solid $main-uwr-color;
+		background: $light-uwr-color;
+	}
+
+	td {
+		padding: 3px;
+		border: 1px solid $light-uwr-color;
+	}
+}
+
+#konsultacje_table {
+	#dzien {
+		width: 150px;
+	}
+
+	#godziny {
+		width: 150px;
+	}
+
+	#akcje {
+		width: 60px;
+	}
 }
 
 /* ------- stopka ------- */
