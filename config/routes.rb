@@ -1,5 +1,16 @@
 Projekt::Application.routes.draw do
 
+  devise_for :teachers
+
+	namespace :admin do
+		resources :consultations
+		resources :subjects do
+			resources :classes
+		end
+
+		root :to => 'contact#index'
+	end
+
 	root :to => 'welcome#index'
 
   # The priority is based upon order of creation:
