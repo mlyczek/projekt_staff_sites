@@ -1,5 +1,6 @@
 class Teacher < ActiveRecord::Base
 	has_one :profile
+	has_many :consultations
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :lockable and :timeoutable

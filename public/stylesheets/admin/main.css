@@ -9,15 +9,12 @@ form p label {
   float: left; }
 
 /* ------------------ po id ------------------- */
+#header {
+  border-bottom: 2px solid #004e7f; }
 #header #login_info {
   float: right;
   margin: 5px; }
 
-#menu {
-  border-top: 2px solid #004e7f;
-  border-bottom: 2px solid #004e7f;
-  float: left;
-  width: 100%; }
 #menu ul {
   margin: 0;
   padding: 0;
@@ -37,11 +34,20 @@ form p label {
 
 /* ------- zawartosc ------- */
 #content {
-  clear: left; }
+  clear: left;
+  border-top: 2px solid #004e7f; }
 
 #local_menu {
   float: left;
   width: 200px; }
+#local_menu ul {
+  margin: 0;
+  margin-left: 20px;
+  margin-top: 10px;
+  padding: 0;
+  list-style-type: none; }
+#local_menu ul li {
+  padding: 5px; }
 
 #local_content {
   margin-left: 201px; }

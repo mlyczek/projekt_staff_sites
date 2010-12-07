@@ -26,6 +26,8 @@ form {
 /* ------------------ po id ------------------- */
 
 #header {
+	@include solid-main-uwr-border(bottom, 2px);
+
 	#login_info {
 		float: right;
 		margin: 5px;
@@ -33,11 +35,6 @@ form {
 }
 
 #menu {
-	@include solid-main-uwr-border(top, 2px);
-	@include solid-main-uwr-border(bottom, 2px);
-	float: left;
-	width: 100%;
-
 	ul {
 		margin: 0;
 		padding: 0;
@@ -68,11 +65,24 @@ form {
 
 #content {
 	clear: left;
+	@include solid-main-uwr-border(top, 2px);
 }
 
 #local_menu {
 	float: left;
 	width: 200px;
+
+	ul {
+		margin: 0;
+		margin-left: 20px;
+		margin-top: 10px;
+		padding: 0;
+		list-style-type: none;
+
+		li {
+			padding: 5px;
+		}
+	}
 }
 
 #local_content {
