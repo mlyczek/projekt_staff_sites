@@ -1,0 +1,4 @@
+- content_for(:local_menu) do
+  %ul
+    %li= link_to_unless_current "Wizytówka", { :controller => "contact", :action => "index" }
+    %li= link_to_unless_current "Konsultacje", { :controller => "consultations", :action => "index" }
