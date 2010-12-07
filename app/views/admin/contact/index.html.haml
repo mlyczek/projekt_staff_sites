@@ -1,1 +1,15 @@
-%p hello
+
+- form_for @curr_u_profile, :url => admin_contact_update_path do |f|
+  %p= f.label :name, "Imię i nazwisko"
+  %p= f.text_field :name
+
+  %p= f.label :degree, "Stopień naukowy"
+  %p= f.select :degree, [["mgr", "mgr"], ["mgr inż.", "mgr inż."], ["dr", "dr"], ["dr hab.", "dr hab."], ["prof.", "prof."]]
+
+  %p= f.label :room_nr, "Nr pokoju"
+  %p= f.text_field :room_nr
+
+  %p= f.label :phone, "Telefon"
+  %p= f.text_field :phone
+
+  %p= f.submit "Zatwierdź"

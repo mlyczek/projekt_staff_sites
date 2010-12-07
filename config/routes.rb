@@ -8,6 +8,8 @@ Projekt::Application.routes.draw do
 			resources :classes
 		end
 
+		match '/contact/update' => 'contact#update', :as => :contact_update, :via => :get
+
 		root :to => 'contact#index'
 	end
 

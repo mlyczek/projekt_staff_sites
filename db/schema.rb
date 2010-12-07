@@ -10,7 +10,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101207161906) do
+ActiveRecord::Schema.define(:version => 20101207172545) do
+
+  create_table "profiles", :force => true do |t|
+    t.integer "teacher_id"
+    t.string  "name"
+    t.string  "degree"
+    t.integer "room_nr"
+    t.string  "email"
+    t.string  "phone"
+  end
 
   create_table "teachers", :force => true do |t|
     t.string   "email",                               :default => "", :null => false

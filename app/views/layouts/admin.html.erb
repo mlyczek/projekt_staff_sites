@@ -7,18 +7,30 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
+  <div id="header">
+	<div id="login_info">
+	<% if teacher_signed_in? %>
+	  <%= link_to('Wyloguj', destroy_teacher_session_path) %>
+	<% else %>
+	  <%= link_to('Zaloguj', new_teacher_session_path)  %>
+	<% end %>
+	</div>
 
-<% if teacher_signed_in? %>
-  <%= link_to('Wyloguj', destroy_teacher_session_path) %>
-<% else %>
-  <%= link_to('Zaloguj', new_teacher_session_path)  %>
-<% end %>
+	<div id="logo">
+	  Uniwerek
+	</div>
+  </div>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+  <div id="content">
+	<p class="notice"><%= notice %></p>
+	<p class="alert"><%= alert %></p>
 
+	<%= yield %>
+  </div>
 
-<%= yield %>
+  <div id="footer">
+	Copyright
+  </div>
 
 </body>
 </html>
