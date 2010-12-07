@@ -1,5 +1,5 @@
-$(document).ready(function() {
-	$unsupportedDialog = $("<div></div>")
+jQuery(document).ready(function() {
+	$unsupportedDialog = jQuery("<div></div>")
 								.attr("title", "Operacja niedostępna")
 								.html("<p>Operacja jest niedostępna</p>")
 								.dialog({
@@ -7,12 +7,12 @@ $(document).ready(function() {
 									modal: true,
 									buttons: {
 										Ok: function() {
-											$(this).dialog("close");
+											jQuery(this).dialog("close");
 										}
 									}
 								});
 
-	$(".unsupported").click(function(e) {
+	jQuery(".unsupported").click(function(e) {
 		$unsupportedDialog.dialog("open");
 
 		e.preventDefault();
