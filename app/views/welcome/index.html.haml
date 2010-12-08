@@ -1,1 +1,17 @@
-%h1 To jest mój projekt
+%h3 Lista pracowników
+
+%table
+  %thead
+    %tr
+      %th Imię i nazwisko
+      %th Adres e-mail
+      %th Pokój
+  %tbody
+    - @teachers.each do |t|
+      - p = t.profile
+      %tr
+        %td
+          = p.degree
+          = p.name
+        %td= p.email
+        %td= p.room_nr

@@ -8,11 +8,26 @@
 </head>
 <body>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+  <div id="header">
+	<div>
+	  Logo ii
+	</div>
+  </div>
 
+  <div id="menu">
+	Left menu
+  </div>
 
-<%= yield %>
+  <div id="content">
+	<p class="notice"><%= notice %></p>
+	<p class="alert"><%= alert %></p>
+
+	<%= yield %>
+  </div>
+
+  <div id="footer">
+	Copyright
+  </div>
 
 </body>
 </html>
