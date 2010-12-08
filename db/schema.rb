@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101207201511) do
+ActiveRecord::Schema.define(:version => 20101208104507) do
 
   create_table "consultations", :force => true do |t|
     t.string "day"
@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(:version => 20101207201511) do
     t.string  "name"
     t.string  "degree"
     t.integer "room_nr"
-    t.string  "email"
     t.string  "phone"
   end
 
@@ -42,9 +41,11 @@ ActiveRecord::Schema.define(:version => 20101207201511) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "login"
   end
 
   add_index "teachers", ["email"], :name => "index_teachers_on_email", :unique => true
+  add_index "teachers", ["login"], :name => "index_teachers_on_login", :unique => true
   add_index "teachers", ["reset_password_token"], :name => "index_teachers_on_reset_password_token", :unique => true
 
 end
