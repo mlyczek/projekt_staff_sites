@@ -9,6 +9,7 @@ Projekt::Application.routes.draw do
 		end
 
 		match '/contact/update' => 'contact#update', :as => :contact_update
+		match '/contact/fb'     => 'contact#fb',     :as => :contact_fb
 
 		root :to => 'contact#index'
 	end

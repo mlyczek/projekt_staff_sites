@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101208104507) do
+ActiveRecord::Schema.define(:version => 20101214193933) do
 
   create_table "consultations", :force => true do |t|
     t.string "day"
@@ -25,6 +25,9 @@ ActiveRecord::Schema.define(:version => 20101208104507) do
     t.string  "degree"
     t.integer "room_nr"
     t.string  "phone"
+    t.string  "fb_profile_url"
+    t.string  "fb_profile_id"
+    t.string  "fb_access_token"
   end
 
   create_table "teachers", :force => true do |t|

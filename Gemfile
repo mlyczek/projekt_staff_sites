@@ -8,6 +8,7 @@ gem 'rails', '3.0.1'
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'haml', '3.0.21'
 gem 'devise', '1.1.3'
+gem 'json', '1.4.6'
 
 # Use unicorn as the web server
 # gem 'unicorn'
