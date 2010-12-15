@@ -2,11 +2,11 @@ class Admin::FbController < Admin::AdminController
   def connect
 		if params[:code].nil?
 			redirect_to "https://graph.facebook.com/oauth/authorize?client_id=152929901421850&"+
-									"redirect_uri=http://localhost:3000/admin/fb/connect&scope=offline_access,publish_stream"
+									"redirect_uri=http://smooth-dawn-29.heroku.com/admin/fb/connect&scope=offline_access,publish_stream"
 		else
 			require 'net/https'
 
-			callback = "http://localhost:3000/admin/fb/connect"
+			callback = "http://smooth-dawn-29.heroku.com/admin/fb/connect"
 			url = URI.parse("https://graph.facebook.com/oauth/access_token?client_id=152929901421850&"+
 											"redirect_uri=#{callback}&client_secret=79612aa2f3328c985efe761697bbd511&code=#{CGI::escape(params[:code])}")
 			http = Net::HTTP.new(url.host, url.port)
