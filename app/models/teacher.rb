@@ -1,5 +1,6 @@
 class Teacher < ActiveRecord::Base
 	has_one :profile, :dependent => :destroy
+	has_one :facebook, :dependent => :destroy
 	has_many :consultations, :dependent => :destroy
 
   # Include default devise modules. Others available are:
@@ -8,7 +9,7 @@ class Teacher < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :authentication_keys => [:login]
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :login, :profile
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :login, :profile, :facebook
 
 	after_create :create_profile
 

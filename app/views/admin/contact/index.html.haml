@@ -20,6 +20,8 @@
 
   %p= f.submit "Zatwierdź"
 
-
-- if @profile.fb_profile_id.nil?
-  %p=link_to "Połącz z Facebookiem", :admin_contact_fb
+%p
+  - if @facebook.nil?
+    = link_to "Połącz z kontem na Facebooku", :admin_connect_to_fb
+  - else
+    = "Konto połączone z kontem na Facebooku"

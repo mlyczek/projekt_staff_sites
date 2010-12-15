@@ -20,18 +20,9 @@ class Admin::ConsultationsController < Admin::AdminController
 
 	private
 	def post_on_fb(cons)
-		if not current_teacher.profile.fb_access_token.nil?
-			require 'net/https'
-
-			url = URI.parse("https://graph.facebook.com/#{current_teacher.profile.fb_profile_id}/feed")
-			http = Net::HTTP.new(url.host, url.port)
-			http.use_ssl = (url.scheme == 'https')
-			request = Net::HTTP::Post.new(url.path)
-			request.set_form_data({'access_token' => current_teacher.profile.fb_access_token,
-														'message' => "Dodałem konsultacje w dniu: "+cons.day}, '&')
-			response = http.request(request)
-
-			flash[:notice] = response.body
+		fb = current_teacher.facebook
+		unless fb.nil?
+			fb.post_to_wal("Dodałem konsultacje w dniu: "+cons.day)
 		end
 	end
 end
