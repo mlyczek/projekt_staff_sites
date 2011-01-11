@@ -1,0 +1,4 @@
+- content_for(:local_menu) do
+  %ul
+    %li= link_to_unless_current "Dane kontaktowe", teacher_contact_path
+    %li= link_to_unless_current "Plan zajęć"

@@ -1,0 +1,40 @@
+- render :partial => "/left_menu"
+
+%h2
+  = @profile.degree
+  = @profile.name
+
+%p
+  Pokój:
+  = @profile.room_nr
+
+%p
+  Adres e-mail:
+  %a{:href => "mailto:"+@email}
+    =@email
+
+%p
+  Nr telefonu:
+  = @profile.phone
+
+%h3 Konsultacje
+
+%table
+  %thead
+    %tr
+      %th Dzień tygodnia
+      %th Godziny
+      %th Uwagi
+  %tbody
+    - @consultations.each do |c|
+      %tr
+        %td= c.day
+        %td
+          = c.start.strftime("%H:%M")
+          \-
+          = c.end.strftime("%H:%M")
+        %td
+          - if c.comments.nil? || c.comments.empty?
+            \---
+          - else
+            = c.comments
