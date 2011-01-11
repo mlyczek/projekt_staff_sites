@@ -3,6 +3,10 @@ $main-uwr-color: #004e7f;
 $second-uwr-color: #1483cb;
 $light-uwr-color: #cedde6;
 
+@mixin solid-main-uwr-border($side, $width: 1px) {
+	border-#{$side}: $width solid $main-uwr-color;
+}
+
 body {
 	margin: 0;
 	padding: 0;
@@ -10,24 +14,30 @@ body {
 	font-size: 12px;
 }
 
+h3 {
+	color: $second-uwr-color;
+}
+
+/* --------- po id ------------ */
+
 #header {
-	border-bottom: 1px solid $main-uwr-color;
+	@include solid-main-uwr-border(bottom, 2px);
 }
 
 #menu {
 	float: left;
 	width: 200px;
-	border: 1px solid;
 }
 
 #content {
 	margin-left: 201px;
-	border: 1px solid red;
 }
+
+/* ------------ stopka ---------------- */
 
 #footer {
 	clear: both;
-	border-top: 1px solid $main-uwr-color;
 	padding: 5px;
+	@include solid-main-uwr-border(top);
 	text-align: center;
 }

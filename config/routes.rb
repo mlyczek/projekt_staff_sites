@@ -14,7 +14,12 @@ Projekt::Application.routes.draw do
 		root :to => 'contact#index'
 	end
 
-	root :to => 'welcome#index'
+	resources :teachers, :only => [:index] do
+		resources :consultations, :only => [:index]
+		resource :contact, :only => [:show]
+	end
+
+	root :to => 'teachers#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -6,6 +6,7 @@
       %th Imię i nazwisko
       %th Adres e-mail
       %th Pokój
+      %th Strona
   %tbody
     - @teachers.each do |t|
       - p = t.profile
@@ -15,3 +16,4 @@
           = p.name
         %td= t.email
         %td= p.room_nr
+        %td= link_to "więcej", 
