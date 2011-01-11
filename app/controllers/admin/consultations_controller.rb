@@ -1,18 +1,18 @@
 class Admin::ConsultationsController < Admin::AdminController
   def index
-		@consultations = Consultation.all
-		@consult = Consultation.new
+		@consultations = current_teacher.consultations
+		@consult = current_teacher.consultations.new
 	end
 
 	def create
-		@consult = Consultation.create(params[:consultation])
+		@consult = current_teacher.consultations.create(params[:consultation])
 		post_on_fb(@consult)
 
 		redirect_to admin_consultations_path
 	end
 
 	def destroy
-		@consult = Consultation.find(params[:id])
+		@consult = current_teacher.consultations.find(params[:id])
 		@consult.destroy()
 
 		redirect_to admin_consultations_path

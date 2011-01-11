@@ -15,7 +15,6 @@ Projekt::Application.routes.draw do
 	end
 
 	resources :teachers, :only => [:index] do
-		resources :consultations, :only => [:index]
 		resource :contact, :only => [:show]
 	end
 

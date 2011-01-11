@@ -10,13 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101215120449) do
+ActiveRecord::Schema.define(:version => 20110111202232) do
 
   create_table "consultations", :force => true do |t|
-    t.string "day"
-    t.time   "start"
-    t.time   "end"
-    t.text   "comments"
+    t.string  "day"
+    t.time    "start"
+    t.time    "end"
+    t.text    "comments"
+    t.integer "teacher_id"
   end
 
   create_table "facebooks", :force => true do |t|
