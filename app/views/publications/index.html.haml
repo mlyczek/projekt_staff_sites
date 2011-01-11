@@ -1,0 +1,18 @@
+- render :partial => "/left_menu"
+
+%h2 Publikacje
+
+%table.spis_table#publikacje_table
+  %thead
+    %tr
+      %th Współautorzy
+      %th Tytuł
+      %th Rok
+      %th Odnośnik
+  %tbody
+    - @publications.each do |p|
+      %tr
+        %td= p.co_authors
+        %td= p.title
+        %td= p.year
+        %td= link_to "zobacz", p.link

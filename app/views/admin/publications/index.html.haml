@@ -16,7 +16,7 @@
         %td= p.co_authors
         %td= p.title
         %td= p.year
-        %td= p.link
+        %td= link_to p.link, p.link
         %td
           = link_to "usuń", admin_publication_path(p), :confirm => "Czy na pewno usunąć?", :method => :delete
 
