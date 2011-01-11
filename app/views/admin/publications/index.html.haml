@@ -9,6 +9,7 @@
       %th Tytuł
       %th Rok
       %th Odnośnik
+      %th Akcje
   %tbody
     - @publications.each do |p|
       %tr
@@ -16,6 +17,8 @@
         %td= p.title
         %td= p.year
         %td= p.link
+        %td
+          = link_to "usuń", admin_publication_path(p), :confirm => "Czy na pewno usunąć?", :method => :delete
 
 %h3 Dodaj nową publikację
 
@@ -28,7 +31,7 @@
     = f.text_field :title, :size => 80
   %p
     = f.label :year, "Rok"
-    = select_year(Time.now)
+    = f.select :year, [[2000], [2001], [2002], [2003], [2004], [2006], [2007], [2008], [2009], [2010], [2011]]
   %p
     = f.label :link, "Link"
     = f.text_field :link, :size => 60
