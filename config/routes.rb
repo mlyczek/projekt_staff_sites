@@ -8,6 +8,8 @@ Projekt::Application.routes.draw do
 			resources :classes
 		end
 
+		resources :publications
+
 		match '/contact/update' => 'contact#update', :as => :contact_update
 		match '/fb/connect'     => 'fb#connect',     :as => :connect_to_fb
 

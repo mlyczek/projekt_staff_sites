@@ -1,0 +1,36 @@
+- render :partial => "local_menu"
+
+%h2 Publikacje
+
+%table.admin_table#publikacje_table
+  %thead
+    %tr
+      %th Współautorzy
+      %th Tytuł
+      %th Rok
+      %th Odnośnik
+  %tbody
+    - @publications.each do |p|
+      %tr
+        %td= p.co_authors
+        %td= p.title
+        %td= p.year
+        %td= p.link
+
+%h3 Dodaj nową publikację
+
+- form_for [:admin, @pub] do |f|
+  %p
+    = f.label :co_authors, "Współautorzy"
+    = f.text_field :co_authors, :size => 60
+  %p
+    = f.label :title, "Tytuł"
+    = f.text_field :title, :size => 80
+  %p
+    = f.label :year, "Rok"
+    = select_year(Time.now)
+  %p
+    = f.label :link, "Link"
+    = f.text_field :link, :size => 60
+
+  %p= f.submit "Dodaj"

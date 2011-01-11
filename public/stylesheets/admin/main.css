@@ -70,6 +70,9 @@ form p label {
 #konsultacje_table #akcje {
   width: 60px; }
 
+#publikacje_table {
+  width: 800px; }
+
 /* ------- stopka ------- */
 #footer {
   padding: 5px;
