@@ -1,0 +1,21 @@
+- render :partial => "local_menu"
+
+%h2 Dodaj nowy przedmiot
+
+- if @subject.errors.any?
+  %div.errors
+    %ul
+      - @subject.errors.full_messages.each do |e|
+        %li= e
+
+- form_for [:admin, @subject] do |f|
+  %p
+    = f.label :name, "Nazwa"
+    = f.text_field :name
+  %p
+    = f.label :academic_year, "Rok akademicki"
+    = f.select :academic_year, [["2005/2006"], ["2006/2007"], ["2007/2008"], ["2008/2009"], ["2009/2010"], ["2010/2011"]]
+  %p
+    = f.label :semester, "Semestr"
+    = f.select :semester, [["Zimowy", 'winter'], ["Letni", 'summer']]
+  %p= f.submit "Dodaj"

@@ -1,0 +1,15 @@
+- render :partial => "subject_inner_menu"
+
+%h2= @subject.name
+%p
+  Rok akademicki:
+  = @subject.academic_year
+%p
+  Semestr:
+  = @subject.semester
+
+%p= link_to "Zmień dane", edit_admin_subject_path(@subject)
+
+%h3 Terminy zajęć
+
+%h3 Zasady zaliczenia

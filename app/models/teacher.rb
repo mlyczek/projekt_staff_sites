@@ -3,6 +3,7 @@ class Teacher < ActiveRecord::Base
 	has_one :facebook, :dependent => :destroy
 	has_many :consultations, :dependent => :destroy
 	has_many :publications, :dependent => :destroy
+	has_many :subjects, :dependent => :destroy
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :lockable and :timeoutable

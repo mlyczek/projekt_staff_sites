@@ -1,0 +1,20 @@
+- render :partial => "local_menu"
+
+%h2 Przedmioty
+
+%p= link_to "Dodaj nowy przedmiot", new_admin_subject_path
+
+%table.admin_table
+  %thead
+    %tr
+      %th Nazwa
+      %th Zajęcia
+      %th Akcje
+  %tbody
+    - @subjects.each do |sub|
+      %tr
+        %td= sub.name
+        %td Tu będą zajęcia
+        %td
+          = link_to "zarządzaj", admin_subject_path(sub)
+          = link_to "usuń", admin_subject_path(sub), :confirm => "Czy na pewno usunąć?", :method => :delete
