@@ -4,4 +4,27 @@
 
 %p= link_to "Dodaj listę zadań", new_admin_subject_exercises_list_path(@subject)
 
-%p Tu będzie tabela z listami zadań
+%table.admin_table
+  %thead
+    %tr
+      %th Nr
+      %th Plik/link
+      %th Termin oddania
+      %th Uwagi
+      %th Data dodania
+  %tbody
+    - @subject.exercises_lists.each do |ex|
+      %tr
+        %td= ex.nr
+        %td
+          - if ex.url.nil? || ex.url.empty?
+            Nazwa pliku z listą
+          - else
+            = link_to truncate(ex.url, :length => 40), ex.url
+        %td= ex.deadline.strftime("%d-%m-%Y")
+        %td
+          - if ex.comment.nil? || ex.comment.empty?
+            \---
+          - else
+            = ex.comment
+        %td= ex.created_at.strftime("%d-%m-%Y %H:%M")

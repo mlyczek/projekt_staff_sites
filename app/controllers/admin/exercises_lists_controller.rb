@@ -7,6 +7,8 @@ class Admin::ExercisesListsController < Admin::AdminController
 	def new
 		@subject = get_all_subjects
 		@exercises_list = @subject.exercises_lists.new
+
+		@list_number = @subject.exercises_lists.maximum(:nr) + 1
 	end
 
 	def create
