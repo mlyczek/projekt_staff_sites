@@ -1,0 +1,23 @@
+- if hour.errors.any?
+  %div.errors
+    %ul
+      - hour.errors.full_messages.each do |e|
+        %li= e
+%p
+  = f.label :genre, "Typ"
+  = f.select :genre, [["wykład", "w"], ["repetytorium", "rep"], ["ćwiczenia", "cw"], ["pracownia", "prac"], |
+						["ćwiczenia + pracownia", "cwprac"]]
+%p
+  = f.label :week_day, "Dzień tygodnia"
+  = f.select :week_day, [["poniedziałek"], ["wtorek"], ["środa"], ["czwartek"], ["piątek"], ["sobota"], ["niedziela"]]
+%p
+  = f.label :start, "Godziny"
+  = f.text_field :start, :size => 4, :value => Time.now.strftime("%H") + ":00"
+  \-
+  = f.text_field :end, :size => 4, :value => (Time.now + 2.hours).strftime("%H") + ":00"
+%p
+  = f.label :room, "Sala"
+  = f.select :room, [["1"], ["4"], ["5"], ["7"], ["13"], ["25"], ["31"], ["32"], ["33"], ["34"], ["35"], ["36"], |
+						["37"], ["40"], ["50a"], ["50b"], ["50d"], ["52"], ["54"], ["55"], ["56"], ["57"], ["59"], |
+						["103"], ["104"], ["105"], ["107"], ["108"], ["109"], ["110"], ["119"], ["137"], ["139"], |
+						["140"], ["141"], ["237"], ["325"]]

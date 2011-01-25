@@ -12,4 +12,24 @@
 
 %h3 Terminy zajęć
 
+%table
+  %thead
+    %tr
+      %th Typ
+      %th Dzień tygodnia
+      %th Godzina
+      %th Sala
+      %th Działania
+  %tbody
+    - @subject.hours.each do |h|
+      %tr
+        %td= h.genre
+        %td= h.week_day
+        %td
+          = h.start.strftime("%H:%M")
+          \-
+          = h.end.strftime("%H:%M")
+        %td= h.room
+        %td= link_to "usuń", admin_subject_hour_path(h.subject, h), :confirm => "Czy na pewno usunąć?", :method => :delete
+
 %p= link_to "Dodaj termin", new_admin_subject_hour_path(@subject)

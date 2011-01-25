@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110112100240) do
+ActiveRecord::Schema.define(:version => 20110125195409) do
 
   create_table "consultations", :force => true do |t|
     t.string  "day"
@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(:version => 20110112100240) do
 
   create_table "hours", :force => true do |t|
     t.integer "subject_id"
-    t.string  "type"
-    t.integer "week_day"
+    t.string  "genre"
+    t.string  "week_day"
     t.time    "start"
     t.time    "end"
     t.string  "room"
