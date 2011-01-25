@@ -1,8 +1,8 @@
 class Hour < ActiveRecord::Base
 	belongs_to :subject
 
-	def genre
-		case self[:genre]
+	def genre_str
+		case self.genre
 		when "w"
 			"wykład"
 		when "rep"

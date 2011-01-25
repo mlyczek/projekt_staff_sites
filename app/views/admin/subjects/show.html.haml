@@ -23,7 +23,7 @@
   %tbody
     - @subject.hours.each do |h|
       %tr
-        %td= h.genre
+        %td= h.genre_str
         %td= h.week_day
         %td
           = h.start.strftime("%H:%M")
