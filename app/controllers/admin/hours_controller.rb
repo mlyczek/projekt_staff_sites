@@ -15,6 +15,22 @@ class Admin::HoursController < Admin::AdminController
 		end
 	end
 
+	def edit
+		subject = current_teacher.subjects.find(params[:subject_id])
+		@hour = subject.hours.find(params[:id])
+	end
+
+	def update
+		subject = current_teacher.subjects.find(params[:subject_id])
+		@hour = subject.hours.find(params[:id])
+
+		if @hour.update_attributes(params[:hour])
+			redirect_to [:admin, subject]
+		else
+			render :view => "edit"
+		end
+	end
+
 	def destroy
 		sub = current_teacher.subjects.find(params[:subject_id])
 		sub.hours.find(params[:id]).destroy

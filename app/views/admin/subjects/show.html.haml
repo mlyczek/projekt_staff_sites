@@ -30,6 +30,8 @@
           \-
           = h.end.strftime("%H:%M")
         %td= h.room
-        %td= link_to "usuń", admin_subject_hour_path(h.subject, h), :confirm => "Czy na pewno usunąć?", :method => :delete
+        %td
+          = link_to "usuń", admin_subject_hour_path(h.subject, h), :confirm => "Czy na pewno usunąć?", :method => :delete
+          = link_to "edytuj", edit_admin_subject_hour_path(h.subject, h)
 
 %p= link_to "Dodaj termin", new_admin_subject_hour_path(@subject)
