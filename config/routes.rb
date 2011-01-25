@@ -4,12 +4,10 @@ Projekt::Application.routes.draw do
 
 	namespace :admin do
 		resources :consultations
-		resources :subjects do
-			resources :classes
-		end
-
 		resources :publications
-		resources :subjects
+		resources :subjects do
+			resources :hours
+		end
 
 		match '/contact/update' => 'contact#update', :as => :contact_update
 		match '/fb/connect'     => 'fb#connect',     :as => :connect_to_fb

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110112084910) do
+ActiveRecord::Schema.define(:version => 20110112100240) do
 
   create_table "consultations", :force => true do |t|
     t.string  "day"
@@ -25,6 +25,15 @@ ActiveRecord::Schema.define(:version => 20110112084910) do
     t.string  "profile_url"
     t.string  "access_token"
     t.integer "teacher_id"
+  end
+
+  create_table "hours", :force => true do |t|
+    t.integer "subject_id"
+    t.string  "type"
+    t.integer "week_day"
+    t.time    "start"
+    t.time    "end"
+    t.string  "room"
   end
 
   create_table "profiles", :force => true do |t|

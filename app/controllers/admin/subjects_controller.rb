@@ -22,6 +22,20 @@ class Admin::SubjectsController < Admin::AdminController
 		@subject = current_teacher.subjects.find(params[:id])
 	end
 
+	def edit
+		@subject = current_teacher.subjects.find(params[:id])
+	end
+
+	def update
+		@subject = current_teacher.subjects.find(params[:id])
+
+		if @subject.update_attributes(params[:subject])
+			redirect_to [:admin, @subject]
+		else
+			render :action => "edit"
+		end
+	end
+
 	def destroy
 		sub = current_teacher.subjects.find(params[:id])
 		sub.destroy

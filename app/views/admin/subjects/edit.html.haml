@@ -1,8 +1,10 @@
 - render :partial => "local_menu"
 
-%h2 Dodaj nowy przedmiot
+%h2
+  Edytuj
+  =@subject.name
 
 - form_for [:admin, @subject] do |f|
   =render :partial => "subject_form", :locals => { :f => f, :subject => @subject }
 
-  %p= f.submit "Dodaj"
+  %p= f.submit "Edytuj"
