@@ -9,8 +9,8 @@ class Subject < ActiveRecord::Base
 	def hours_genres
 		types = Array.new
 		self.hours.each do |h|
-			if !types.include?(h.genre)
-				types.push(h.genre)
+			if !types.include?(h.genre_str)
+				types.push(h.genre_str)
 			end
 		end
 		return types

@@ -1,0 +1,29 @@
+- render :partial => "/left_menu", :locals => { :subjects => @subjects }
+
+%h2= @subject.name
+
+%h3 Terminy zajęć
+
+%table
+  %thead
+    %tr
+      %th Typ
+      %th Dzień tygodnia
+      %th Godzina
+      %th Sala
+  %tbody
+    - @subject.hours.each do |h|
+      %tr
+        %td= h.genre_str
+        %td= h.week_day
+        %td
+          = h.start.strftime("%H:%M")
+          \-
+          = h.end.strftime("%H:%M")
+        %td= h.room
+
+%h3 Listy zadań
+
+%h3 Wykłady
+
+%h3 Materiały

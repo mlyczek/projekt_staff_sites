@@ -1,5 +1,11 @@
 - content_for(:local_menu) do
   %ul
     %li= link_to_unless_current "Dane kontaktowe", teacher_contact_path
-    %li= link_to_unless_current "Plan zajęć"
+    %li
+      = link_to_unless_current "Zajęcia", teacher_subjects_path
+      - if !subjects.nil? && !subjects.empty?
+        %ul
+          %li= link_to_unless_current "Plan zajęć", teacher_subjects_path
+          - subjects.each do |s|
+            %li= link_to_unless_current s.name, teacher_subject_path(s.teacher, s)
     %li= link_to_unless_current "Publikacje", teacher_publications_path
