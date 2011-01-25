@@ -7,6 +7,7 @@ Projekt::Application.routes.draw do
 		resources :publications
 		resources :subjects do
 			resources :hours
+			resources :exercises_lists
 		end
 
 		match '/contact/update' => 'contact#update', :as => :contact_update

@@ -1,6 +1,7 @@
 class Subject < ActiveRecord::Base
   belongs_to :teacher
 	has_many :hours
+	has_many :exercises_lists
 
 	validates :name, :presence => { :message => "Nie podano nazwy przedmiotu" }
 	validates :semester, :inclusion => { :in => ['zimowy', 'letni'], :message => "Nieprawidłowy semestr" }

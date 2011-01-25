@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110125195409) do
+ActiveRecord::Schema.define(:version => 20110125211133) do
 
   create_table "consultations", :force => true do |t|
     t.string  "day"
@@ -18,6 +18,25 @@ ActiveRecord::Schema.define(:version => 20110125195409) do
     t.time    "end"
     t.text    "comments"
     t.integer "teacher_id"
+  end
+
+  create_table "exercises_lists", :force => true do |t|
+    t.integer  "subject_id"
+    t.integer  "nr"
+    t.date     "deadline"
+    t.integer  "exercises_files_list_id"
+    t.string   "url"
+    t.string   "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "exercises_lists_files", :force => true do |t|
+    t.integer  "exercises_list_id"
+    t.string   "file_name"
+    t.integer  "size"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "facebooks", :force => true do |t|

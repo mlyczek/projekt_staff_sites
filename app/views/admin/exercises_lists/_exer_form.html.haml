@@ -1,0 +1,20 @@
+- if exercises_list.errors.any?
+  %div.errors
+    %ul
+      - exercises_list.errors.full_messages.each do |e|
+        %li= e
+%p
+  = f.label :nr, "Numer"
+  = f.text_field :nr, :size => 4
+%p
+  = f.label :deadline, "Termin oddania"
+  = f.text_field :deadline, :size => 20
+%p
+  = f.label :upload, "Plik z listą"
+  = f.file_field :upload
+%p
+  = f.label :url, "Link do listy"
+  = f.text_field :url, :size => 50
+%p
+  = f.label :comment, "Dodatkowe uwagi"
+  = f.text_field :comment, :size => 50
