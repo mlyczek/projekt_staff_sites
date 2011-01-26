@@ -37,4 +37,12 @@
 
 %h3 Wykłady
 
+- @subject.lectures.each do |lec|
+  %div
+    %p
+      = lec.nr.to_s + ")"
+      = lec.title
+      %span{:style => "font-style: italic;"}= lec.date
+    %div= lec.abstract
+
 %h3 Materiały
