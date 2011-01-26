@@ -1,0 +1,9 @@
+- render :partial => "admin/subjects/subject_inner_menu"
+
+%h2
+  Edytuj listę nr
+  =@exercises_list.nr
+
+- form_for [:admin, @exercises_list.subject, @exercises_list], :html => { :multipart => true } do |f|
+  = render :partial => "exer_form", :locals => { :f => f, :exercises_list => @exercises_list }
+  %p= f.submit "Edytuj"
