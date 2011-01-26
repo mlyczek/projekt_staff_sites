@@ -2,5 +2,5 @@
   %ul
     %li= link_to "Wróć do przedmiotów", admin_subjects_path
     %li= link_to_unless_current "Listy zadań", admin_subject_exercises_lists_path(@subject)
-    %li= link_to_unless_current "Wykłady"
+    %li= link_to_unless_current "Wykłady", admin_subject_lectures_path(@subject)
     %li= link_to_unless_current "Materiały"

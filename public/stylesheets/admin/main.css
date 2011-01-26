@@ -76,6 +76,9 @@ form p label {
 #exercises_lists_table {
   width: 800px; }
 
+#lectures_table {
+  width: 800px; }
+
 /* ------- stopka ------- */
 #footer {
   padding: 5px;

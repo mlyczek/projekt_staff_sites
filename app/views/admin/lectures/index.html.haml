@@ -1,0 +1,26 @@
+- render :partial => "admin/subjects/subject_inner_menu"
+
+%h2 Wykłady
+
+%p= link_to "Dodaj nowy wykład", new_admin_subject_lecture_path(@subject)
+
+%table.admin_table#lectures_table
+  %thead
+    %tr
+      %th Nr
+      %th Data
+      %th Tytuł
+      %th Opis
+      %th Data dodania
+      %th Działania
+  %tbody
+    - @lectures.each do |lec|
+      %tr
+        %td= lec.nr
+        %td= lec.date
+        %td= lec.title
+        %td= truncate(lec.abstract, :length => 20)
+        %td= lec.created_at.strftime("%m-%d-%Y %H:%M")
+        %td
+          = link_to "edytuj", edit_admin_subject_lecture_path(lec.subject, lec)
+          = link_to "usuń", admin_subject_lecture_path(lec.subject, lec), :confirm => "Czy na pewno usunąć?", :method => :delete

@@ -1,0 +1,7 @@
+- render :partial => "admin/subjects/subject_inner_menu"
+
+%h2 Dodaj nowy wykład
+
+- form_for [:admin, @lecture.subject, @lecture] do |f|
+  = render :partial => "lectures_form", :locals => { :f => f, :lecture => @lecture }
+  %p= f.submit "Dodaj"

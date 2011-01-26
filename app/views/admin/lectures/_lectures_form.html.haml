@@ -1,0 +1,17 @@
+- if lecture.errors.any?
+  %div.errors
+    %ul
+      - lecture.errors.full_messages.each do |e|
+        %li= e
+%p
+  = f.label :nr, "Numer"
+  = f.text_field :nr, :size => 4
+%p
+  = f.label :title, "Tytuł"
+  = f.text_field :title
+%p
+  = f.label :date, "Data wykładu"
+  = f.text_field :date
+%p
+  = f.label :abstract, "Opis wykładu"
+  = f.text_area :abstract, :cols => 60, :rows => 20
