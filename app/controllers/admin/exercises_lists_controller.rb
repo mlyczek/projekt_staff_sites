@@ -8,7 +8,8 @@ class Admin::ExercisesListsController < Admin::AdminController
 		@subject = get_all_subjects
 		@exercises_list = @subject.exercises_lists.new
 
-		@list_number = @subject.exercises_lists.maximum(:nr) + 1
+		list_number = @subject.exercises_lists.maximum(:nr) + 1
+		@exercises_list.nr = list_number;
 	end
 
 	def create

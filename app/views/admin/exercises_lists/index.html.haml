@@ -4,7 +4,7 @@
 
 %p= link_to "Dodaj listę zadań", new_admin_subject_exercises_list_path(@subject)
 
-%table.admin_table
+%table.admin_table#exercises_lists_table
   %thead
     %tr
       %th Nr
@@ -12,6 +12,7 @@
       %th Termin oddania
       %th Uwagi
       %th Data dodania
+      %th Działania
   %tbody
     - @subject.exercises_lists.each do |ex|
       %tr
@@ -28,3 +29,6 @@
           - else
             = ex.comment
         %td= ex.created_at.strftime("%d-%m-%Y %H:%M")
+        %td
+          = link_to "edytuj", edit_admin_subject_exercises_list_path(ex.subject, ex)
+          = link_to "usuń", admin_subject_exercises_list_path(ex.subject, ex), :confirm => "Czy na pewno usunąć?", :method => :delete
