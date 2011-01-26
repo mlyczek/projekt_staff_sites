@@ -13,3 +13,23 @@
 
 %div= @lecture.abstract
 
+%h3 Pomoce do wykładu
+
+%p= link_to "Dodaj pomoc do wykładu", new_admin_subject_lecture_resource_path(@lecture.subject, @lecture)
+
+%table.admin_table
+  %thead
+    %tr
+      %th Nazwa
+      %th Link
+      %th Opis
+      %th Działania
+  %tbody
+    - @lecture.lecture_resources.each do |res|
+      %tr
+        %td= res.name
+        %td= link_to res.url, res.url
+        %td= res.description
+        %td
+          = link_to "edytuj", edit_admin_subject_lecture_resource_path(res.lecture.subject, res.lecture, res)
+          = link_to "usuń", admin_subject_lecture_resource_path(res.lecture.subject, res.lecture, res), :confirm => "Czy na pewno usunąć?", :method => :delete

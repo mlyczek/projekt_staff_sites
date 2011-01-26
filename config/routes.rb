@@ -8,7 +8,9 @@ Projekt::Application.routes.draw do
 		resources :subjects do
 			resources :hours
 			resources :exercises_lists
-			resources :lectures
+			resources :lectures do
+				resources :resources, :controller => "lecture_resources"
+			end
 		end
 
 		match '/contact/update' => 'contact#update', :as => :contact_update

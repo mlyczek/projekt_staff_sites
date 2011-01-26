@@ -1,0 +1,14 @@
+- if resource.errors.any?
+  %div.errors
+    %ul
+      - resource.errors.full_messages.each do |e|
+        %li= e
+%p
+  = f.label :name, "Nazwa"
+  = f.text_field :name, :size => 40
+%p
+  = f.label :url, "Link"
+  = f.text_field :url, :size => 40
+%p
+  = f.label :description, "Opis"
+  = f.text_field :description, :size => 40

@@ -1,0 +1,7 @@
+- render :partial => "admin/subjects/subject_inner_menu"
+
+%h2 Dodaj nowy materiał do wykładu
+
+- form_for :resource, @resource, :url => { :action => "create" } do |f|
+  = render :partial => "resources_form", :locals => { :f => f, :resource => @resource }
+  %p= f.submit "Dodaj"
