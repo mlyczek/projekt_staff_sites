@@ -45,4 +45,10 @@
       %span{:style => "font-style: italic;"}= lec.date
     %div= lec.abstract
 
+    %ul
+      - lec.lecture_resources.each do |res|
+        %li
+          = link_to res.name, res.url
+          = res.description
+
 %h3 Materiały
