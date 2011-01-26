@@ -1,0 +1,12 @@
+- render :partial => "admin/subjects/subject_inner_menu"
+
+%h2
+  Wykład:
+  = @lecture.nr.to_s + ")"
+  = @lecture.title
+
+%p
+  Data wykładu:
+  = @lecture.date
+
+%div= @lecture.abstract
