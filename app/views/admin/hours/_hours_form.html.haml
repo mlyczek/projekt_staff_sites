@@ -11,6 +11,11 @@
   = f.label :week_day, "Dzień tygodnia"
   = f.select :week_day, [["poniedziałek"], ["wtorek"], ["środa"], ["czwartek"], ["piątek"], ["sobota"], ["niedziela"]]
 %p
+  = f.label :start, "Godziny"
+  = f.text_field :start, :size => 4, :value => @hour.start.strftime("%H:%M")
+  \-
+  = f.text_field :end, :size => 4, :value => @hour.end.strftime("%H:%M")
+%p
   = f.label :room, "Sala"
   = f.select :room, [["1"], ["4"], ["5"], ["7"], ["13"], ["25"], ["31"], ["32"], ["33"], ["34"], ["35"], ["36"], |
 						["37"], ["40"], ["50a"], ["50b"], ["50d"], ["52"], ["54"], ["55"], ["56"], ["57"], ["59"], |

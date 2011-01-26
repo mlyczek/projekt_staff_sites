@@ -4,10 +4,5 @@
 
 - form_for [:admin, @hour.subject, @hour] do |f|
   =render :partial => "hours_form", :locals => { :f => f, :hour => @hour }
-  %p
-    = f.label :start, "Godziny"
-    = f.text_field :start, :size => 4, :value => @hour.start.strftime("%H:%M")
-    \-
-    = f.text_field :end, :size => 4, :value => @hour.end.strftime("%H:%M")
 
   %p= f.submit "Zmień"
