@@ -4,7 +4,7 @@
 
 %h3 Terminy zajęć
 
-%table
+%table.spis_table
   %thead
     %tr
       %th Typ
@@ -23,6 +23,17 @@
         %td= h.room
 
 %h3 Listy zadań
+
+%ul
+  - @subject.exercises_lists.each do |ex|
+    %li
+      %p
+        = link_to "Lista " + ex.nr.to_s, ex.url
+        %span{:style => "font-style: italic;"}
+          Termin oddania:
+          = ex.deadline
+      %p{:style => "font-size: 11px"}= ex.comment
+
 
 %h3 Wykłady
 

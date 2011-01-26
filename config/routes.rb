@@ -19,7 +19,9 @@ Projekt::Application.routes.draw do
 	resources :teachers, :only => [:index] do
 		resource :contact, :only => [:show]
 		resources :publications, :only => [:index]
-		resources :subjects, :only => [:index, :show]
+		resources :subjects, :only => [:index, :show] do
+			resources :exercises_lists, :only => [:show]
+		end
 	end
 
 	root :to => 'teachers#index'
