@@ -5,13 +5,13 @@
   = @lecture.nr.to_s + ")"
   = @lecture.title
 
-%p= link_to "edytuj wykład", edit_admin_subject_lecture_path(@lecture.subject, @lecture)
-
 %p
   Data wykładu:
   = @lecture.date
 
 %div= @lecture.abstract
+
+%p= link_to "edytuj wykład", edit_admin_subject_lecture_path(@lecture.subject, @lecture)
 
 %h3 Pomoce do wykładu
 
