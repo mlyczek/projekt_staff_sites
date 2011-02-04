@@ -11,6 +11,20 @@ class Admin::ConsultationsController < Admin::AdminController
 		redirect_to admin_consultations_path
 	end
 
+	def edit
+		@consult = current_teacher.consultations.find(params[:id])
+	end
+
+	def update
+		@consult = current_teacher.consultations.find(params[:id])
+
+		if @consult.update_attributes(params[:consultation])
+			redirect_to admin_consultations_path
+		else
+			render :action => "edit"
+		end
+	end
+
 	def destroy
 		@consult = current_teacher.consultations.find(params[:id])
 		@consult.destroy()

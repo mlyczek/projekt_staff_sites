@@ -1,0 +1,7 @@
+= render :partial => "admin/contact/left_menu"
+
+%h3 Edytuj konsultacje
+
+- form_for [:admin, @consult] do |f|
+  = render :partial => "consult_form", :locals => { :f => f, :consult => @consult }
+  %p= f.submit "Zmień"

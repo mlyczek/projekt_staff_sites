@@ -23,20 +23,11 @@
           - else
             = c.comments
         %td
+          = link_to "edytuj", edit_admin_consultation_path(c)
           = link_to "usuń", admin_consultation_path(c), :confirm => "Czy na pewno usunąć?", :method => :delete
 
 %h3 Dodaj nowe konsultacje
 
 - form_for [:admin, @consult] do |f|
-  %p
-    = f.label :day, "Dzień tygodnia"
-    = f.select :day, [["poniedziałek"], ["wtorek"], ["środa"], ["czwartek"], ["piątek"], ["sobota"], ["niedziela"]]
-  %p
-    = f.label :start, "Godziny"
-    = f.text_field :start, :size => 4, :value => Time.now.strftime("%H") + ":00"
-    \-
-    = f.text_field :end, :size => 4, :value => (Time.now + 2.hours).strftime("%H") + ":00"
-  %p
-    = f.label :comments, "Uwagi"
-    = f.text_area :comments, :cols => 60, :rows => 5
+  = render :partial => "consult_form", :locals => { :f => f, :consult => @consult }
   %p= f.submit "Dodaj"
