@@ -12,6 +12,10 @@ Projekt::Application.routes.draw do
 				resources :resources, :controller => "lecture_resources"
 			end
 		end
+		resource :timetable do
+			resources :events
+			resources :event_types
+		end
 
 		match '/contact/update' => 'contact#update', :as => :contact_update
 		match '/fb/connect'     => 'fb#connect',     :as => :connect_to_fb
