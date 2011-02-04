@@ -24,31 +24,33 @@
 
 %h3 Listy zadań
 
-%ul
+%ul#listy_zadan_list
   - @subject.exercises_lists.each do |ex|
     %li
-      %p
+      %p.lista_name
         = link_to "Lista " + ex.nr.to_s, ex.url
-        %span{:style => "font-style: italic;"}
+        %span.lista_deadline
           Termin oddania:
           = ex.deadline
-      %p{:style => "font-size: 11px"}= ex.comment
+      %p.lista_comment= ex.comment
 
 
 %h3 Wykłady
 
-- @subject.lectures.each do |lec|
-  %div
-    %p
-      = lec.nr.to_s + ")"
-      = lec.title
-      %span{:style => "font-style: italic;"}= lec.date
-    %div= lec.abstract
+%ul#wyklady_list
+  - @subject.lectures.each do |lec|
+    %li
+      %p.wyklad_title
+        = lec.nr.to_s + ")"
+        = lec.title
+        %span.wyklad_date= lec.date
 
-    %ul
-      - lec.lecture_resources.each do |res|
-        %li
-          = link_to res.name, res.url
-          = res.description
+      %div.wyklad_abstract= lec.abstract
+
+      %ul
+        - lec.lecture_resources.each do |res|
+          %li
+            = link_to res.name, res.url
+            = res.description
 
 %h3 Materiały

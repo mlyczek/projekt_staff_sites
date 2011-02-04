@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: Arial, sans-serif;
   font-size: 12px; }
 
 h2, h3 {
@@ -26,6 +26,29 @@ h2, h3 {
 #content {
   margin-left: 201px;
   padding-bottom: 10px; }
+
+#listy_zadan_list li {
+  margin-bottom: 10px; }
+#listy_zadan_list .lista_name {
+  margin: 0px; }
+#listy_zadan_list .lista_name .lista_deadline {
+  font-style: italic; }
+#listy_zadan_list .lista_comment {
+  margin: 3px 0px;
+  font-size: 11px; }
+
+#wyklady_list {
+  list-style-type: none; }
+#wyklady_list li .wyklad_title {
+  margin: 0px;
+  font-size: 13px;
+  font-weight: bold; }
+#wyklady_list li .wyklad_title .wyklad_date {
+  font-weight: normal;
+  font-style: italic; }
+#wyklady_list li .wyklad_abstract {
+  margin: 10px 15px;
+  text-align: justify; }
 
 /* ------- tabele -------- */
 .spis_table {
