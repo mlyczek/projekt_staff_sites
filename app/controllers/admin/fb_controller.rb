@@ -36,4 +36,12 @@ class Admin::FbController < Admin::AdminController
 			redirect_to :admin_root
 		end
 	end
+
+	def disconnect
+		current_teacher.facebook.destroy
+
+		flash[:notice] = 'Pomyślnie rozłączono z kontem na Facebook\'u'
+
+		redirect_ro :admin_root
+	end
 end

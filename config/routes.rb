@@ -15,6 +15,7 @@ Projekt::Application.routes.draw do
 
 		match '/contact/update' => 'contact#update', :as => :contact_update
 		match '/fb/connect'     => 'fb#connect',     :as => :connect_to_fb
+		match '/fb/disconnect'  => 'fb#disconnect',  :as => :disconnect_from_fb
 
 		root :to => 'contact#index'
 	end
