@@ -1,0 +1,12 @@
+%p
+  = f.label :co_authors, "Współautorzy"
+  = f.text_field :co_authors, :size => 60
+%p
+  = f.label :title, "Tytuł"
+  = f.text_field :title, :size => 80
+%p
+  = f.label :year, "Rok"
+  = f.select :year, [[2000], [2001], [2002], [2003], [2004], [2006], [2007], [2008], [2009], [2010], [2011]]
+%p
+  = f.label :link, "Link"
+  = f.text_field :link, :size => 60

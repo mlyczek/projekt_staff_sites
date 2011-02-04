@@ -1,0 +1,12 @@
+- render :partial => "local_menu"
+
+%h2 Edytuj publikację
+
+- form_for [:admin, @pub] do |f|
+  - if @pub.errors.any?
+    %div.errors
+      %ul
+        - @pub.errors.full_messages.each do |e|
+          %li= e
+  = render :partial => "publications_form", :locals => { :f => f }
+  %p= f.submit "Edytuj"
