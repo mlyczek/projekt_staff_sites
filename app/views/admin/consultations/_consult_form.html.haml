@@ -9,9 +9,9 @@
   = f.select :day, [["poniedziałek"], ["wtorek"], ["środa"], ["czwartek"], ["piątek"], ["sobota"], ["niedziela"]]
 %p
   = f.label :start, "Godziny"
-  = f.text_field :start, :size => 4, :value => Time.now.strftime("%H") + ":00"
+  = f.text_field :start, :size => 4, :value => consult.start.strftime("%H:%M")
   \-
-  = f.text_field :end, :size => 4, :value => (Time.now + 2.hours).strftime("%H") + ":00"
+  = f.text_field :end, :size => 4, :value => consult.end.strftime("%H:%M")
 %p
   = f.label :comments, "Uwagi"
   = f.text_area :comments, :cols => 60, :rows => 5
