@@ -3,7 +3,7 @@ class CreateTimetableEventTypes < ActiveRecord::Migration
 		create_table :event_types do |t|
 			t.string :name
 			t.string :color
-			t.boolean :editable, :default => 1
+			t.boolean :editable, :default => true
 		end
   end
 
