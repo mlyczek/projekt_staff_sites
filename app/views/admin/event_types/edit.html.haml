@@ -1,8 +1,8 @@
 = render :partial => "left_menu"
 
 %h2 Plan zajęć
-%h3 Dodaj nowy typ
+%h3 Edytuj typ
 
 - form_for [:admin, @evt_type] do |f|
   = render :partial => "type_form", :locals => { :f => f, :evt_type => @evt_type }
-  %p= f.submit "Dodaj"
+  %p= f.submit "Zmień"

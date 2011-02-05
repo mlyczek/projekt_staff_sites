@@ -13,6 +13,20 @@ class Admin::EventTypesController < Admin::AdminController
 		end
 	end
 
+	def edit
+		@evt_type = EventType.find(params[:id])
+	end
+
+	def update
+		@evt_type = EventType.find(params[:id])
+
+		if @evt_type.update_attributes(params[:event_type])
+			redirect_to admin_timetable_path
+		else
+			render :action => "edit"
+		end
+	end
+
 	def destroy
 		evt_type = EventType.find(params[:id])
 		evt_type.destroy

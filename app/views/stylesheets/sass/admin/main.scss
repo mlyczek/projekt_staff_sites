@@ -62,6 +62,16 @@ form {
 	}
 }
 
+#timetable_event_types_menu {
+	li {
+		.actions {
+			float: right;
+			padding: 1px 3px;
+			background: #f0f0f0;
+		}
+	}
+}
+
 /* ------- zawartosc ------- */
 
 #content {

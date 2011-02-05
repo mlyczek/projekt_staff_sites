@@ -1,8 +1,9 @@
 - content_for(:local_menu) do
   %ul
+    %li= link_to_unless_current "Plan zajęć", admin_timetable_path
     %li
       Typy
-      %ul
+      %ul#timetable_event_types_menu
         - EventType.all.each do |et|
           %li{:style => "background: " + et.color}
             = et.name

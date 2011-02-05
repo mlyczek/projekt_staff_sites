@@ -1,0 +1,11 @@
+- if evt_type.errors.any?
+  %div.errors
+    %ul
+      - evt_type.errors.full_messages.each do |e|
+        %li= e
+%p
+  = f.label :name, "Nazwa"
+  = f.text_field :name
+%p
+  = f.label :color, "Kolor"
+  = f.text_field :color
