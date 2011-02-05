@@ -1,0 +1,15 @@
+= render :partial => "left_menu"
+
+%h2 Plan zajęć
+%h3 Dodaj nowy typ
+
+- form_for [:admin, @evt_type] do |f|
+  %p
+    = f.label :name, "Nazwa"
+    = f.text_field :name
+
+  %p
+    = f.label :color, "Kolor"
+    = f.text_field :color
+
+  %p= f.submit "Dodaj"

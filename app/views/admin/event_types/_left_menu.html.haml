@@ -1,0 +1,15 @@
+- content_for(:local_menu) do
+  %ul
+    %li
+      Typy
+      %ul
+        - EventType.all.each do |et|
+          %li{:style => "background: " + et.color}
+            = et.name
+            - if et.editable?
+              %span.actions
+                = link_to "e", edit_admin_event_type_path(et)
+                = link_to "x", admin_event_type_path(et), :confirm => "Czy na pewno usunąć typ?", :method => :delete
+      %hr
+      %ul
+        %li= link_to "Nowy typ", new_admin_event_type_path

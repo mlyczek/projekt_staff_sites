@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110126120124) do
+ActiveRecord::Schema.define(:version => 20110205115857) do
 
   create_table "consultations", :force => true do |t|
     t.string  "day"
@@ -18,6 +18,22 @@ ActiveRecord::Schema.define(:version => 20110126120124) do
     t.time    "end"
     t.text    "comments"
     t.integer "teacher_id"
+  end
+
+  create_table "event_types", :force => true do |t|
+    t.string  "name"
+    t.string  "color"
+    t.boolean "editable", :default => true
+  end
+
+  create_table "events", :force => true do |t|
+    t.integer "timetable_id"
+    t.integer "event_type_id"
+    t.string  "title"
+    t.string  "week_day"
+    t.text    "description"
+    t.time    "start"
+    t.time    "end"
   end
 
   create_table "exercises_lists", :force => true do |t|
@@ -115,5 +131,11 @@ ActiveRecord::Schema.define(:version => 20110126120124) do
   add_index "teachers", ["email"], :name => "index_teachers_on_email", :unique => true
   add_index "teachers", ["login"], :name => "index_teachers_on_login", :unique => true
   add_index "teachers", ["reset_password_token"], :name => "index_teachers_on_reset_password_token", :unique => true
+
+  create_table "timetables", :force => true do |t|
+    t.integer  "teacher_id"
+    t.string   "comment"
+    t.datetime "modified"
+  end
 
 end
