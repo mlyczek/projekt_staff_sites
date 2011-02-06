@@ -1,0 +1,22 @@
+- if event.errors.any?
+  %div.errors
+    %ul
+      - event.errors.full_messages.each do |e|
+        %li= e
+%p
+  = f.label :title, "Nazwa"
+  = f.text_field :title, :size => 50
+%p
+  = f.label :event_type_id, "Typ"
+  = f.collection_select :event_type_id, EventType.all, :id, :name
+%p
+  = f.label :week_day
+  = f.select :week_day, [["poniedziałek"], ["wtorek"], ["środa"], ["czwartek"], ["piątek"], ["sobota"], ["niedziela"]]
+%p
+  = f.label :start, "Godziny"
+  = f.text_field :start, :size => 4, :value => event.start.strftime("%H:%M")
+  \-
+  = f.text_field :end, :size => 4, :value => event.end.strftime("%H:%M")
+%p
+  = f.label :description, "Opis"
+  = f.text_area :description, :cols => 60, :rows => 5

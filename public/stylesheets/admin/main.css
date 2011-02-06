@@ -84,6 +84,17 @@ form p label {
 #lectures_table {
   width: 800px; }
 
+#timetable {
+  width: 800px; }
+#timetable th {
+  width: 110px; }
+#timetable th#hours {
+  width: 30px; }
+#timetable td {
+  background: url("../../images/stripes.png") repeat; }
+#timetable td#hours_td {
+  background: none; }
+
 /* ------- stopka ------- */
 #footer {
   padding: 5px;

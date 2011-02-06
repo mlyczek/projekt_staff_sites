@@ -1,0 +1,8 @@
+= render :partial => "/admin/event_types/left_menu"
+
+%h2 Plan zajęć
+%h3 Dodaj wydarzenie/zajęcia
+
+- form_for [:admin, @event.timetable, @event] do |f|
+  = render :partial => "event_form", :locals => { :f => f, :event => @event }
+  %p= f.submit "Dodaj"

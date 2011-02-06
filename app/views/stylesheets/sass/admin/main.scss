@@ -141,6 +141,26 @@ form {
 	width: 800px;
 }
 
+#timetable {
+	width: 800px;
+
+	th {
+		width: 110px;
+
+		&#hours {
+			width: 30px;
+		}
+	}
+
+	td {
+		background: url('../../images/stripes.png') repeat;
+
+		&#hours_td {
+			background: none;
+		}
+	}
+}
+
 /* ------- stopka ------- */
 
 #footer {

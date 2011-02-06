@@ -2,4 +2,28 @@
 
 %h2 Plan zajęć
 
-/ tu musi być jakaś tabelka z planem zajęć
+%p= link_to "Dodaj nowe wydarzenie/zajęcia", new_admin_timetable_event_path
+
+%table#timetable.admin_table
+  %thead
+    %tr
+      %th#hours Godz
+      %th Poniedziałek
+      %th Wtorek
+      %th Środa
+      %th Czwartek
+      %th Piątek
+      %th Sobota
+      %th Niedziela
+  %tbody
+    %tr
+      %td#hours_td 8:00
+      - @timetable.events_for_all_days.each do |e|
+        %td
+          - e.each do |evt|
+            %div.event
+              %p.title= evt.title
+              %p.time
+                = evt.start.strftime("%H:%M")
+                \-
+                = evt.end.strftime("%H:%M")
