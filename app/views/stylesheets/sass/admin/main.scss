@@ -159,6 +159,24 @@ form {
 			background: none;
 		}
 	}
+
+	.event {
+		border: 1px solid #000;
+		min-height: 40px;
+		background: #fff;
+
+		.title {
+			width: 100%;
+			margin: 0px;
+			background: #c9c9c9;
+			white-space: nowrap;
+			overflow: hidden;
+		}
+
+		.time {
+			margin: 0px;
+		}
+	}
 }
 
 /* ------- stopka ------- */

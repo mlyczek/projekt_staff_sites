@@ -94,6 +94,18 @@ form p label {
   background: url("../../images/stripes.png") repeat; }
 #timetable td#hours_td {
   background: none; }
+#timetable .event {
+  border: 1px solid #000;
+  min-height: 40px;
+  background: #fff; }
+#timetable .event .title {
+  width: 100%;
+  margin: 0px;
+  background: #c9c9c9;
+  white-space: nowrap;
+  overflow: hidden; }
+#timetable .event .time {
+  margin: 0px; }
 
 /* ------- stopka ------- */
 #footer {
