@@ -169,6 +169,7 @@ form {
 	.event {
 		min-height: 30px;
 		width: 102px;
+		font-size: 11px;
 
 		border: 1px solid #000;
 		border-radius: 5px;
@@ -176,12 +177,12 @@ form {
 		background: #fff;
 
 		.title {
-			width: 100%;
 			margin: 0px;
-			background: #c9c9c9;
-			white-space: nowrap;
+			padding: 1px 2px;
 			overflow: hidden;
+			white-space: nowrap;
 
+			background: #c9c9c9;
 			border-top-right-radius: 5px;
 			border-top-left-radius: 5px;
 			-moz-border-top-right-radius: 5px;
@@ -190,6 +191,7 @@ form {
 
 		.time {
 			margin: 0px;
+			padding: 1px 2px;
 		}
 	}
 }
