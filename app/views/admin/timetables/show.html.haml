@@ -17,11 +17,13 @@
       %th Niedziela
   %tbody
     %tr
-      %td#hours_td 8:00
+      %td#hours_td
+        - for i in 7..21
+          %div.hour= i.to_s + ":00"
       - @timetable.events_for_all_days.each do |e|
         %td
           - e.each do |evt|
-            %div.event
+            %div.event{ :style => "height: " + evt.height_pixels + "; position: absolute; top: " + evt.pixels_from_top + "; background: " + evt.event_type.color }
               %p.title= evt.title
               %p.time
                 = evt.start.strftime("%H:%M")

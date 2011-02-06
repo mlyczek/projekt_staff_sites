@@ -91,19 +91,30 @@ form p label {
 #timetable th#hours {
   width: 30px; }
 #timetable td {
-  background: url("../../images/stripes.png") repeat; }
+  background: url("../../images/stripes.png") repeat;
+  position: relative;
+  height: 400px; }
 #timetable td#hours_td {
   background: none; }
+#timetable td div.hour {
+  height: 31px; }
 #timetable .event {
+  min-height: 30px;
+  width: 102px;
   border: 1px solid #000;
-  min-height: 40px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
   background: #fff; }
 #timetable .event .title {
   width: 100%;
   margin: 0px;
   background: #c9c9c9;
   white-space: nowrap;
-  overflow: hidden; }
+  overflow: hidden;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  -moz-border-top-right-radius: 5px;
+  -moz-border-top-left-radius: 5px; }
 #timetable .event .time {
   margin: 0px; }
 
