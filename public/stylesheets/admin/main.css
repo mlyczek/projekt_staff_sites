@@ -47,7 +47,8 @@ form p.cleared {
   margin: 2px; }
 #local_menu #timetable_event_types_menu li .actions {
   float: right;
-  padding: 1px 3px; }
+  padding: 1px 3px;
+  background: inherit; }
 #local_menu #timetable_event_types_menu li .actions .remove {
   background: url("../../images/icons/red_close.png") no-repeat center center;
   width: 12px;

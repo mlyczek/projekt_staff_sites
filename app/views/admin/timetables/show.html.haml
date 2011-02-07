@@ -28,7 +28,7 @@
                 %p.title
                   = link_to evt.title, edit_admin_timetable_event_path(evt), :title => "Edytuj wydarzenie"
                   %span.actions
-                    = link_to "x", admin_timetable_event_path(evt), :confirm => "Czy na pewno usunąć?", :method => :delete, :class => "remove"
+                    = link_to "x", admin_timetable_event_path(evt), :confirm => "Czy na pewno usunąć?", :method => :delete, :class => "remove", :title => "Usuń wydarzenie"
                 %p.time
                   = evt.start.strftime("%H:%M")
                   \-

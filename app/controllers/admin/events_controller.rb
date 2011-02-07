@@ -12,4 +12,25 @@ class Admin::EventsController < Admin::AdminController
 			render :action => "new"
 		end
 	end
+
+	def edit
+		@event = current_teacher.timetable.events.find(params[:id])
+	end
+
+	def update
+		@event = current_teacher.timetable.events.find(params[:id])
+
+		if @event.update_attributes(params[:event])
+			redirect_to admin_timetable_path
+		else
+			render :action => "edit"
+		end
+	end
+
+	def destroy
+		event = current_teacher.timetable.events.find(params[:id])
+		event.destroy
+
+		redirect_to admin_timetable_path
+	end
 end
