@@ -3,6 +3,6 @@
 %h2 Plan zajęć
 %h3 Edytuj wydarzenie/zajęcia
 
-- form_for [:admin, @event.timetable, @event] do |f|
+- form_for [:admin, @event], :url => admin_timetable_event_path(@event) do |f|
   = render :partial => "event_form", :locals => { :f => f, :event => @event }
   %p= f.submit "Zmień"
