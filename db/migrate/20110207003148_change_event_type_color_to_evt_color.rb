@@ -1,9 +1,17 @@
 class ChangeEventTypeColorToEvtColor < ActiveRecord::Migration
   def self.up
+		EventType.all.map { |et|
+			if et.name == "Zajęcia w ii"
+				et.update_attributes(:color => "1")
+			else
+				if et.name == "Zajęcia poza ii"
+					et.update_attributes(:color => "2")
+				end
+			end
+		}
+
 		change_column :event_types, :color, :integer
 		rename_column :event_types, :color, :event_type_color_id
-
-		EventType.all.map { |et| et.update_attributes(:event_type_color_id => 1) }
   end
 
   def self.down
