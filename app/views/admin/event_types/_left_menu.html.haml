@@ -2,8 +2,6 @@
   %ul
     %li= link_to_unless_current "Plan zajęć", admin_timetable_path
 
-  %hr
-
   %ul#timetable_event_types_menu
     - EventType.all.each do |et|
       %li{ :class => et.event_type_color.css_class }
@@ -12,6 +10,6 @@
           %span.actions
             = link_to "e", edit_admin_event_type_path(et)
             = link_to "x", admin_event_type_path(et), :confirm => "Czy na pewno usunąć typ?", :method => :delete
-  %hr
+
   %ul
     %li= link_to "Nowy typ", new_admin_event_type_path

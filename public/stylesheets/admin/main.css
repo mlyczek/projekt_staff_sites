@@ -34,49 +34,56 @@ form p label {
 #menu ul li a:hover {
   text-decoration: underline; }
 
-#timetable_event_types_menu li {
+#local_menu #timetable_event_types_menu {
+  margin-top: 5px;
+  margin-left: 0px;
+  margin-right: 20px;
+  padding: 5px 10px;
+  border: solid #004e7f;
+  border-width: 1px 0px; }
+#local_menu #timetable_event_types_menu li {
   margin: 2px; }
-#timetable_event_types_menu li .actions {
+#local_menu #timetable_event_types_menu li .actions {
   float: right;
   padding: 1px 3px;
   background: #f0f0f0; }
-#timetable_event_types_menu li.ii_classes {
+#local_menu #timetable_event_types_menu li.ii_classes {
   background: #cedde6;
   color: black;
   border: 1px solid #004e7f;
   border-radius: 5px;
   -moz-border-radius: 5px; }
-#timetable_event_types_menu li.not_ii {
+#local_menu #timetable_event_types_menu li.not_ii {
   background: #bee6c8;
   color: black;
   border: 1px solid #0b8600;
   border-radius: 5px;
   -moz-border-radius: 5px; }
-#timetable_event_types_menu li.violet {
+#local_menu #timetable_event_types_menu li.violet {
   background: #edd6ff;
   color: black;
   border: 1px solid #650386;
   border-radius: 5px;
   -moz-border-radius: 5px; }
-#timetable_event_types_menu li.violet2 {
+#local_menu #timetable_event_types_menu li.violet2 {
   background: #ffdcf7;
   color: black;
   border: 1px solid #d30086;
   border-radius: 5px;
   -moz-border-radius: 5px; }
-#timetable_event_types_menu li.red {
+#local_menu #timetable_event_types_menu li.red {
   background: #ffe4dc;
   color: black;
   border: 1px solid #b11e00;
   border-radius: 5px;
   -moz-border-radius: 5px; }
-#timetable_event_types_menu li.yellow {
+#local_menu #timetable_event_types_menu li.yellow {
   background: #fffbc9;
   color: black;
   border: 1px solid #ffd500;
   border-radius: 5px;
   -moz-border-radius: 5px; }
-#timetable_event_types_menu li.orange {
+#local_menu #timetable_event_types_menu li.orange {
   background: #fff0cd;
   color: black;
   border: 1px solid #f39600;
@@ -170,6 +177,8 @@ form p label {
 #timetable .event .time {
   margin: 0px;
   padding: 1px 2px; }
+#timetable .event:hover {
+  z-index: 1000; }
 #timetable .event.ii_classes {
   border-color: #004e7f;
   background: #cedde6; }

@@ -121,7 +121,15 @@ form {
 	}
 }
 
-#timetable_event_types_menu {
+#local_menu #timetable_event_types_menu {
+	margin-top: 5px;
+	margin-left: 0px;
+	margin-right: 20px;
+	padding: 5px 10px;
+
+	border: solid $main_uwr_color;
+	border-width: 1px 0px;
+
 	li {
 		margin: 2px;
 
@@ -289,6 +297,10 @@ form {
 		.time {
 			margin: 0px;
 			padding: 1px 2px;
+		}
+
+		&:hover {
+			z-index: 1000;
 		}
 
 		&.ii_classes {
