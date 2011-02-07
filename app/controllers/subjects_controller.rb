@@ -1,6 +1,7 @@
 class SubjectsController < ApplicationController
   def index
 		@subjects = get_all_subjects
+		@timetable = Teacher.find(params[:teacher_id]).timetable
 	end
 
 	def show

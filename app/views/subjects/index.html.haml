@@ -2,4 +2,29 @@
 
 %h2 Zajęcia
 
-%p Tutaj będzie plan zajęć
+%table#timetable.spis_table
+  %thead
+    %tr
+      %th#hours Godz
+      %th Poniedziałek
+      %th Wtorek
+      %th Środa
+      %th Czwartek
+      %th Piątek
+      %th Sobota
+      %th Niedziela
+  %tbody
+    %tr
+      %td#hours_td
+        - for i in 7..21
+          %div.hour= i.to_s + ":00"
+      - @timetable.events_for_all_days.each do |e|
+        %td
+          %div.timetable_column
+            - e.each do |evt|
+              %div.event{ :style => "height: " + evt.height_pixels + "; top: " + evt.pixels_from_top, :class => evt.event_type.event_type_color.css_class }
+                %p.title= evt.title
+                %p.time
+                  = evt.start.strftime("%H:%M")
+                  \-
+                  = evt.end.strftime("%H:%M")
