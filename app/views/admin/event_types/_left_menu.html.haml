@@ -6,7 +6,7 @@
 
   %ul#timetable_event_types_menu
     - EventType.all.each do |et|
-      %li{:style => "background: " + et.color}
+      %li{ :class => et.event_type_color.css_class }
         = et.name
         - if et.editable?
           %span.actions

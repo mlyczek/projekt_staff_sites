@@ -22,10 +22,11 @@
           %div.hour= i.to_s + ":00"
       - @timetable.events_for_all_days.each do |e|
         %td
-          - e.each do |evt|
-            %div.event{ :style => "height: " + evt.height_pixels + "; position: absolute; top: " + evt.pixels_from_top + "; background: " + evt.event_type.color }
-              %p.title= evt.title
-              %p.time
-                = evt.start.strftime("%H:%M")
-                \-
-                = evt.end.strftime("%H:%M")
+          %div.timetable_column
+            - e.each do |evt|
+              %div.event{ :style => "height: " + evt.height_pixels + "; top: " + evt.pixels_from_top, :class => evt.event_type.event_type_color.css_class }
+                %p.title= evt.title
+                %p.time
+                  = evt.start.strftime("%H:%M")
+                  \-
+                  = evt.end.strftime("%H:%M")

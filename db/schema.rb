@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110205115857) do
+ActiveRecord::Schema.define(:version => 20110207003148) do
 
   create_table "consultations", :force => true do |t|
     t.string  "day"
@@ -20,10 +20,15 @@ ActiveRecord::Schema.define(:version => 20110205115857) do
     t.integer "teacher_id"
   end
 
+  create_table "event_type_colors", :force => true do |t|
+    t.string "name"
+    t.string "css_class"
+  end
+
   create_table "event_types", :force => true do |t|
     t.string  "name"
-    t.string  "color"
-    t.boolean "editable", :default => true
+    t.integer "event_type_color_id", :limit => 255
+    t.boolean "editable",                           :default => true
   end
 
   create_table "events", :force => true do |t|
