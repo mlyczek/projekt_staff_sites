@@ -1,0 +1,88 @@
+#timetable {
+  width: 865px;
+  table-layout: fixed;
+  border-spacing: 2px; }
+#timetable th {
+  width: 110px;
+  padding: 3px; }
+#timetable th#hours {
+  width: 40px; }
+#timetable td {
+  background: url("../../images/stripes.png") repeat top;
+  height: 400px;
+  vertical-align: top;
+  padding: 0px 3px; }
+#timetable td#hours_td {
+  background: none;
+  padding: 3px; }
+#timetable td div.hour {
+  height: 31px; }
+#timetable td div.timetable_column {
+  position: relative; }
+#timetable .event {
+  min-height: 30px;
+  width: 105px;
+  position: absolute;
+  font-size: 11px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  background: #fff; }
+#timetable .event .title {
+  margin: 0px;
+  padding: 1px 2px;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #000;
+  background: #e9e9e9;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+  -moz-border-top-right-radius: 3px;
+  -moz-border-top-left-radius: 3px; }
+#timetable .event .time {
+  margin: 0px;
+  padding: 1px 2px; }
+#timetable .event:hover {
+  z-index: 1000; }
+#timetable .event.ii_classes {
+  border-color: #004e7f;
+  background: #cedde6; }
+#timetable .event.ii_classes .title {
+  color: white;
+  background: #004e7f; }
+#timetable .event.not_ii {
+  border-color: #0b8600;
+  background: #bee6c8; }
+#timetable .event.not_ii .title {
+  color: white;
+  background: #0b8600; }
+#timetable .event.violet {
+  border-color: #650386;
+  background: #edd6ff; }
+#timetable .event.violet .title {
+  color: white;
+  background: #650386; }
+#timetable .event.violet2 {
+  border-color: #d30086;
+  background: #ffdcf7; }
+#timetable .event.violet2 .title {
+  color: white;
+  background: #d30086; }
+#timetable .event.red {
+  border-color: #b11e00;
+  background: #ffe4dc; }
+#timetable .event.red .title {
+  color: white;
+  background: #b11e00; }
+#timetable .event.yellow {
+  border-color: #ffd500;
+  background: #fffbc9; }
+#timetable .event.yellow .title {
+  color: white;
+  background: #ffd500; }
+#timetable .event.orange {
+  border-color: #f39600;
+  background: #fff0cd; }
+#timetable .event.orange .title {
+  color: white;
+  background: #f39600; }

@@ -7,62 +7,7 @@ $light-uwr-color: #cedde6;
 	border-#{$side}: $width solid $main-uwr-color;
 }
 
-@mixin timetable_color_class($dark_bg, $light_bg, $dark_txt, $light_txt) {
-	border-color: $dark_bg;
-	background: $light_bg;
-
-	.title {
-		color: $light_txt;
-		background: $dark_bg;
-	}
-
-	.time {
-	}
-}
-
-@mixin timetable_types_menu_class($dark, $light, $txt) {
-	background: $light;
-	color: $txt;
-
-	border: 1px solid $dark;
-	border-radius: 5px;
-	-moz-border-radius: 5px;
-}
-
-$ii_classes_dark_bg: #004e7f;
-$ii_classes_light_bg: #cedde6;
-$ii_classes_dark_txt: #000;
-$ii_classes_light_txt: #fff;
-
-$not_ii_dark_bg: #0b8600;
-$not_ii_light_bg: #bee6c8;
-$not_ii_dark_txt: #000;
-$not_ii_light_txt: #fff;
-
-$violet_dark_bg: #650386;
-$violet_light_bg: #edd6ff;
-$violet_dark_txt: #000;
-$violet_light_txt: #fff;
-
-$violet2_dark_bg: #d30086;
-$violet2_light_bg: #ffdcf7;
-$violet2_dark_txt: #000;
-$violet2_light_txt: #fff;
-
-$red_dark_bg: #b11e00;
-$red_light_bg: #ffe4dc;
-$red_dark_txt: #000;
-$red_light_txt: #fff;
-
-$yellow_dark_bg: #ffd500;
-$yellow_light_bg: #fffbc9;
-$yellow_dark_txt: #000;
-$yellow_light_txt: #fff;
-
-$orange_dark_bg: #f39600;
-$orange_light_bg: #fff0cd;
-$orange_dark_txt: #000;
-$orange_light_txt: #fff;
+@import "../timetable_public";
 
 /* ---------------------------------------------------- */
 
