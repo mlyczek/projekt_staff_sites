@@ -8,8 +8,8 @@
         = et.name
         - if et.editable?
           %span.actions
-            = link_to "e", edit_admin_event_type_path(et)
-            = link_to "x", admin_event_type_path(et), :confirm => "Czy na pewno usunąć typ?", :method => :delete
+            = link_to "x", admin_event_type_path(et), :confirm => "Czy na pewno usunąć typ?", :method => :delete, :class => "remove", :title => "Usuń"
+            = link_to "e", edit_admin_event_type_path(et), :class => "edit", :title => "Edytuj"
 
   %ul
     %li= link_to "Nowy typ", new_admin_event_type_path
