@@ -7,5 +7,9 @@
   = f.label :name, "Nazwa"
   = f.text_field :name
 %p
-  = f.label :color, "Kolor"
-  = f.text_field :color
+  = f.label :event_type_color_id, "Kolor"
+%div#choose_color
+  - EventTypeColor.all.each do |etc|
+    %div.color
+      = f.label :event_type_color_id, etc.name, { :value => etc.id, :class => etc.css_class }
+      = f.radio_button :event_type_color_id, etc.id

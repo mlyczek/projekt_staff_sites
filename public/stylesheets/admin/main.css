@@ -9,6 +9,8 @@ form p label {
   display: block;
   width: 150px;
   float: left; }
+form p.cleared {
+  clear: left; }
 
 /* ------------------ po id ------------------- */
 #header {
@@ -46,7 +48,7 @@ form p label {
 #local_menu #timetable_event_types_menu li .actions {
   float: right;
   padding: 1px 3px;
-  background: #f0f0f0; }
+  background: #fff; }
 #local_menu #timetable_event_types_menu li.ii_classes {
   background: #cedde6;
   color: black;
@@ -137,11 +139,14 @@ form p label {
   width: 800px; }
 
 #timetable {
-  width: 800px; }
+  width: 865px;
+  table-layout: fixed;
+  border-spacing: 2px; }
 #timetable th {
-  width: 110px; }
+  width: 110px;
+  padding: 3px; }
 #timetable th#hours {
-  width: 30px; }
+  width: 40px; }
 #timetable td {
   background: url("../../images/stripes.png") repeat top;
   height: 400px;
@@ -156,7 +161,7 @@ form p label {
   position: relative; }
 #timetable .event {
   min-height: 30px;
-  width: 102px;
+  width: 105px;
   position: absolute;
   font-size: 11px;
   border: 1px solid #000;
@@ -221,6 +226,60 @@ form p label {
 #timetable .event.orange .title {
   color: white;
   background: #f39600; }
+
+#choose_color {
+  float: left; }
+#choose_color .color {
+  margin: 5px;
+  float: left;
+  text-align: center; }
+#choose_color .color label {
+  display: block;
+  width: 30px;
+  height: 30px;
+  text-indent: -90000px; }
+#choose_color .color label.ii_classes {
+  background: #cedde6;
+  color: black;
+  border: 1px solid #004e7f;
+  border-radius: 5px;
+  -moz-border-radius: 5px; }
+#choose_color .color label.not_ii {
+  background: #bee6c8;
+  color: black;
+  border: 1px solid #0b8600;
+  border-radius: 5px;
+  -moz-border-radius: 5px; }
+#choose_color .color label.violet {
+  background: #edd6ff;
+  color: black;
+  border: 1px solid #650386;
+  border-radius: 5px;
+  -moz-border-radius: 5px; }
+#choose_color .color label.violet2 {
+  background: #ffdcf7;
+  color: black;
+  border: 1px solid #d30086;
+  border-radius: 5px;
+  -moz-border-radius: 5px; }
+#choose_color .color label.red {
+  background: #ffe4dc;
+  color: black;
+  border: 1px solid #b11e00;
+  border-radius: 5px;
+  -moz-border-radius: 5px; }
+#choose_color .color label.yellow {
+  background: #fffbc9;
+  color: black;
+  border: 1px solid #ffd500;
+  border-radius: 5px;
+  -moz-border-radius: 5px; }
+#choose_color .color label.orange {
+  background: #fff0cd;
+  color: black;
+  border: 1px solid #f39600;
+  border-radius: 5px;
+  -moz-border-radius: 5px; }
 
 /* ------- stopka ------- */
 #footer {

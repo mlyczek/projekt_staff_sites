@@ -80,6 +80,10 @@ form {
 			width: 150px;
 			float: left;
 		}
+
+		&.cleared {
+			clear: left;
+		}
 	}
 }
 
@@ -136,7 +140,7 @@ form {
 		.actions {
 			float: right;
 			padding: 1px 3px;
-			background: #f0f0f0;
+			background: #fff;
 		}
 
 		&.ii_classes {
@@ -239,13 +243,16 @@ form {
 }
 
 #timetable {
-	width: 800px;
+	width: 865px;
+	table-layout: fixed;
+	border-spacing: 2px;
 
 	th {
 		width: 110px;
+		padding: 3px;
 
 		&#hours {
-			width: 30px;
+			width: 40px;
 		}
 	}
 
@@ -271,7 +278,7 @@ form {
 
 	.event {
 		min-height: 30px;
-		width: 102px;
+		width: 105px;
 		position: absolute;
 		font-size: 11px;
 
@@ -329,6 +336,51 @@ form {
 
 		&.orange {
 			@include timetable_color_class($orange_dark_bg, $orange_light_bg, $orange_dark_txt, $orange_light_txt);
+		}
+	}
+}
+
+#choose_color {
+	float: left;
+
+	.color {
+		margin: 5px;
+		float: left;
+		text-align: center;
+
+		label {
+			display: block;
+			width: 30px;
+			height: 30px;
+			text-indent: -90000px;
+
+			&.ii_classes {
+				@include timetable_types_menu_class($ii_classes_dark_bg, $ii_classes_light_bg, $ii_classes_dark_txt);
+			}
+
+			&.not_ii {
+				@include timetable_types_menu_class($not_ii_dark_bg, $not_ii_light_bg, $not_ii_dark_txt);
+			}
+
+			&.violet {
+				@include timetable_types_menu_class($violet_dark_bg, $violet_light_bg, $violet_dark_txt);
+			}
+
+			&.violet2 {
+				@include timetable_types_menu_class($violet2_dark_bg, $violet2_light_bg, $violet2_dark_txt);
+			}
+
+			&.red {
+				@include timetable_types_menu_class($red_dark_bg, $red_light_bg, $red_dark_txt);
+			}
+
+			&.yellow {
+				@include timetable_types_menu_class($yellow_dark_bg, $yellow_light_bg, $yellow_dark_txt);
+			}
+
+			&.orange {
+				@include timetable_types_menu_class($orange_dark_bg, $orange_light_bg, $orange_dark_txt);
+			}
 		}
 	}
 }
