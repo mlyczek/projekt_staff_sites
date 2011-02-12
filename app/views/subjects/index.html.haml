@@ -2,6 +2,10 @@
 
 %h2 Plan zajęć
 
+%ul#timetable_legend
+  - @timetable.event_types_with_default.each do |et|
+    %li{ :class => et.event_type_color.css_class }= et.name
+
 %table#timetable.spis_table
   %thead
     %tr
@@ -23,8 +27,9 @@
           %div.timetable_column
             - e.each do |evt|
               %div.event{ :style => "height: " + evt.height_pixels + "; top: " + evt.pixels_from_top, :class => evt.event_type.event_type_color.css_class, :title => evt.description }
-                %p.title= evt.title
+                %p.title{ :title => evt.title }= evt.title
                 %p.time
                   = evt.start.strftime("%H:%M")
                   \-
                   = evt.end.strftime("%H:%M")
+                %p.description= truncate(evt.description, :length => 20)

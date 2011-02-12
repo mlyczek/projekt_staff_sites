@@ -50,6 +50,58 @@ h2, h3 {
   margin: 10px 15px;
   text-align: justify; }
 
+#timetable_legend {
+  margin: 0px;
+  margin-top: -10px;
+  padding: 15px 0px;
+  list-style-type: none; }
+#timetable_legend li {
+  margin: 2px;
+  padding: 5px 10px;
+  display: inline; }
+#timetable_legend li.ii_classes {
+  background: #cedde6;
+  color: black;
+  border: 1px solid #004e7f;
+  border-radius: 5px;
+  -moz-border-radius: 5px; }
+#timetable_legend li.not_ii {
+  background: #bee6c8;
+  color: black;
+  border: 1px solid #0b8600;
+  border-radius: 5px;
+  -moz-border-radius: 5px; }
+#timetable_legend li.violet {
+  background: #edd6ff;
+  color: black;
+  border: 1px solid #650386;
+  border-radius: 5px;
+  -moz-border-radius: 5px; }
+#timetable_legend li.violet2 {
+  background: #ffdcf7;
+  color: black;
+  border: 1px solid #d30086;
+  border-radius: 5px;
+  -moz-border-radius: 5px; }
+#timetable_legend li.red {
+  background: #ffe4dc;
+  color: black;
+  border: 1px solid #b11e00;
+  border-radius: 5px;
+  -moz-border-radius: 5px; }
+#timetable_legend li.yellow {
+  background: #fffbc9;
+  color: black;
+  border: 1px solid #ffd500;
+  border-radius: 5px;
+  -moz-border-radius: 5px; }
+#timetable_legend li.orange {
+  background: #fff0cd;
+  color: black;
+  border: 1px solid #f39600;
+  border-radius: 5px;
+  -moz-border-radius: 5px; }
+
 /* ------- tabele -------- */
 .spis_table {
   width: 600px; }
