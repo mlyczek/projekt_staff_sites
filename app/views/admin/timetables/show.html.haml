@@ -26,9 +26,12 @@
             - e.each do |evt|
               %div.event{ :style => "height: " + evt.height_pixels + "; top: " + evt.pixels_from_top, :class => evt.event_type.event_type_color.css_class, :title => evt.description }
                 %p.title
-                  = link_to evt.title, edit_admin_timetable_event_path(evt), :title => "Edytuj wydarzenie"
-                  %span.actions
-                    = link_to "x", admin_timetable_event_path(evt), :confirm => "Czy na pewno usunąć?", :method => :delete, :class => "remove", :title => "Usuń wydarzenie"
+                  - if evt.editable?
+                    = link_to evt.title, edit_admin_timetable_event_path(evt), :title => "Edytuj wydarzenie"
+                    %span.actions
+                      = link_to "x", admin_timetable_event_path(evt), :confirm => "Czy na pewno usunąć?", :method => :delete, :class => "remove", :title => "Usuń wydarzenie"
+                  - else
+                    = evt.title
                 %p.time
                   = evt.start.strftime("%H:%M")
                   \-

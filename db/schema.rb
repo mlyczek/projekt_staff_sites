@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110212170132) do
+ActiveRecord::Schema.define(:version => 20110212195521) do
 
   create_table "consultations", :force => true do |t|
     t.string  "day"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(:version => 20110212170132) do
     t.text    "description"
     t.time    "start"
     t.time    "end"
+    t.boolean "editable",      :default => true
   end
 
   create_table "exercises_lists", :force => true do |t|
