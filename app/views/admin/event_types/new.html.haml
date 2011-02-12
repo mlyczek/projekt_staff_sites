@@ -3,6 +3,6 @@
 %h2 Plan zajęć
 %h3 Dodaj nowy typ
 
-- form_for [:admin, @evt_type] do |f|
+- form_for [:admin, @evt_type], :url => admin_timetable_event_types_path do |f|
   = render :partial => "type_form", :locals => { :f => f, :evt_type => @evt_type }
   %p{ :class => "cleared" }= f.submit "Dodaj"

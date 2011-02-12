@@ -1,6 +1,7 @@
 class Timetable < ActiveRecord::Base
 	belongs_to :teacher
   has_many :events, :dependent => :destroy
+	has_many :event_types, :dependent => :destroy
 
 	def events_for_all_days
 		day_events = Array.new(7)
@@ -15,5 +16,11 @@ class Timetable < ActiveRecord::Base
 
 	def day_names
 		return ["poniedziałek", "wtorek", "środa", "czwartek", "piątek", "sobota", "niedziela"]
+	end
+
+	def event_types_with_default
+		default_types = EventType.default_types
+
+		return default_types | self.event_types
 	end
 end

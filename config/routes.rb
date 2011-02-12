@@ -14,8 +14,8 @@ Projekt::Application.routes.draw do
 		end
 		resource :timetable do
 			resources :events
+			resources :event_types
 		end
-		resources :event_types
 
 		match '/contact/update' => 'contact#update', :as => :contact_update
 		match '/fb/connect'     => 'fb#connect',     :as => :connect_to_fb

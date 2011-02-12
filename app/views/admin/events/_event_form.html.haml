@@ -8,7 +8,7 @@
   = f.text_field :title, :size => 50
 %p
   = f.label :event_type_id, "Typ"
-  = f.collection_select :event_type_id, EventType.all, :id, :name
+  = f.collection_select :event_type_id, event.timetable.event_types_with_default, :id, :name
 %p
   = f.label :week_day
   = f.select :week_day, [["poniedziałek"], ["wtorek"], ["środa"], ["czwartek"], ["piątek"], ["sobota"], ["niedziela"]]

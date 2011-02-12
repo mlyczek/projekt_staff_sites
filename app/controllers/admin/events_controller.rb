@@ -1,5 +1,6 @@
 class Admin::EventsController < Admin::AdminController
   def new
+		load_timetable
 		@event = current_teacher.timetable.events.new(:start => Time.now, :end => Time.now + 2.hour)
 	end
 
@@ -14,6 +15,7 @@ class Admin::EventsController < Admin::AdminController
 	end
 
 	def edit
+		load_timetable
 		@event = current_teacher.timetable.events.find(params[:id])
 	end
 
@@ -32,5 +34,10 @@ class Admin::EventsController < Admin::AdminController
 		event.destroy
 
 		redirect_to admin_timetable_path
+	end
+
+	private
+	def load_timetable
+		@timetable = current_teacher.timetable
 	end
 end

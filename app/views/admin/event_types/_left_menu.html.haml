@@ -3,13 +3,17 @@
     %li= link_to_unless_current "Plan zajęć", admin_timetable_path
 
   %ul#timetable_event_types_menu
-    - EventType.all.each do |et|
+    - EventType.default_types.each do |et|
+      %li{ :class => et.event_type_color.css_class }
+        = et.name
+
+    - @timetable.event_types.each do |et|
       %li{ :class => et.event_type_color.css_class }
         = et.name
         - if et.editable?
           %span.actions
-            = link_to "x", admin_event_type_path(et), :confirm => "Czy na pewno usunąć typ?", :method => :delete, :class => "remove", :title => "Usuń"
-            = link_to "e", edit_admin_event_type_path(et), :class => "edit", :title => "Edytuj"
+            = link_to "x", admin_timetable_event_type_path(et), :confirm => "Czy na pewno usunąć typ?", :method => :delete, :class => "remove", :title => "Usuń"
+            = link_to "e", edit_admin_timetable_event_type_path(et), :class => "edit", :title => "Edytuj"
 
   %ul
-    %li= link_to "Nowy typ", new_admin_event_type_path
+    %li= link_to "Nowy typ", new_admin_timetable_event_type_path
