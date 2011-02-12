@@ -24,6 +24,7 @@
   width: 105px;
   position: absolute;
   font-size: 11px;
+  overflow: hidden;
   border: 1px solid #000;
   border-radius: 5px;
   -moz-border-radius: 5px;
@@ -40,6 +41,9 @@
   -moz-border-top-right-radius: 3px;
   -moz-border-top-left-radius: 3px; }
 #timetable .event .time {
+  margin: 0px;
+  padding: 1px 2px; }
+#timetable .event .description {
   margin: 0px;
   padding: 1px 2px; }
 #timetable .event:hover {

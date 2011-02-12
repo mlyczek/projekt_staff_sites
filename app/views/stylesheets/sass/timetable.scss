@@ -39,6 +39,7 @@
 		width: 105px;
 		position: absolute;
 		font-size: 11px;
+		overflow: hidden;
 
 		border: 1px solid #000;
 		border-radius: 5px;
@@ -60,6 +61,11 @@
 		}
 
 		.time {
+			margin: 0px;
+			padding: 1px 2px;
+		}
+
+		.description {
 			margin: 0px;
 			padding: 1px 2px;
 		}

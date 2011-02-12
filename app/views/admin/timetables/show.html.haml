@@ -25,7 +25,7 @@
           %div.timetable_column
             - e.each do |evt|
               %div.event{ :style => "height: " + evt.height_pixels + "; top: " + evt.pixels_from_top, :class => evt.event_type.event_type_color.css_class, :title => evt.description }
-                %p.title
+                %p.title{ :title => evt.title }
                   - if evt.editable?
                     = link_to evt.title, edit_admin_timetable_event_path(evt), :title => "Edytuj wydarzenie"
                     %span.actions
@@ -36,3 +36,4 @@
                   = evt.start.strftime("%H:%M")
                   \-
                   = evt.end.strftime("%H:%M")
+                %p.description= truncate(evt.description, :length => 20)
