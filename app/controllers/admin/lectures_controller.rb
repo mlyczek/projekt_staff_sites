@@ -8,8 +8,8 @@ class Admin::LecturesController < Admin::AdminController
 		@subject = get_current_subject(params[:subject_id])
 		@lecture = @subject.lectures.new
 
-		lecture_number = @subject.lectures.maximum(:nr) + 1
-		@lecture.nr = lecture_number;
+		lecture_number = @subject.lectures.maximum(:nr) || 0
+		@lecture.nr = lecture_number + 1;
 	end
 
 	def create
