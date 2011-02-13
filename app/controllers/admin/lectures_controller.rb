@@ -7,6 +7,9 @@ class Admin::LecturesController < Admin::AdminController
 	def new
 		@subject = get_current_subject(params[:subject_id])
 		@lecture = @subject.lectures.new
+
+		lecture_number = @subject.lectures.maximum(:nr) + 1
+		@lecture.nr = lecture_number;
 	end
 
 	def create
