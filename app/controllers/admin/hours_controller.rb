@@ -2,8 +2,8 @@ class Admin::HoursController < Admin::AdminController
   def new
 		subject = current_teacher.subjects.find(params[:subject_id])
 		@hour = subject.hours.new
-		@hour.start = Time.now
-		@hour.end = Time.now + 2.hour
+		@hour.start = Time.zone.now
+		@hour.end = Time.zone.now + 2.hour
 	end
 
 	def create
