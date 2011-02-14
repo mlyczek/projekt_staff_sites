@@ -2,8 +2,8 @@ class Admin::ConsultationsController < Admin::AdminController
   def index
 		@consultations = current_teacher.consultations
 		@consult = current_teacher.consultations.new
-		@consult.start = Time.now
-		@consult.end = Time.now + 2.hour
+		@consult.start = Time.zone.now
+		@consult.end = Time.zone.now + 2.hour
 	end
 
 	def create

@@ -1,7 +1,7 @@
 class Admin::EventsController < Admin::AdminController
   def new
 		load_timetable
-		@event = current_teacher.timetable.events.new(:start => Time.now, :end => Time.now + 2.hour)
+		@event = current_teacher.timetable.events.new(:start => Time.zone.now, :end => Time.zone.now + 2.hour)
 	end
 
 	def create
