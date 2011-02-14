@@ -2,7 +2,7 @@
 
 %h2 Dane kontaktowe
 
-- form_for [:admin, @profile], :url => admin_contact_update_path do |f|
+= form_for [:admin, @profile], :url => admin_contact_update_path do |f|
   %p
     = f.label :name, "Imię i nazwisko"
     = f.text_field :name
