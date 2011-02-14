@@ -10,6 +10,12 @@ gem 'haml', '3.0.21'
 gem 'devise', '1.1.3'
 gem 'json', '1.4.6'
 
+group :test do
+	gem 'capybara', '0.4.0'
+	gem 'cucumber-rails', '0.3.2'
+	gem 'cucumber', '0.9.4'
+end
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
