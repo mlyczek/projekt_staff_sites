@@ -28,6 +28,6 @@
 
 %h3 Dodaj nowe konsultacje
 
-- form_for [:admin, @consult] do |f|
+= form_for [:admin, @consult] do |f|
   = render :partial => "consult_form", :locals => { :f => f, :consult => @consult }
   %p= f.submit "Dodaj"
