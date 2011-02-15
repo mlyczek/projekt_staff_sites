@@ -33,3 +33,9 @@ Then /^I should see the following table rows( in any order)?:?$/ do |unordered, 
     end
   end.should be_true
 end
+
+When /^I follow "([^"]*)" in row with "([^"]*)" within "([^"]*)" table$/ do |link, something_from_row, selector|
+	within(:xpath, "//table[@id = '#{selector}']//tr[td[contains(text(), '#{something_from_row}')]]") do
+		click_link(link)
+	end
+end
