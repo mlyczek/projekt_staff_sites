@@ -79,3 +79,18 @@ Then /^there should be (.*) exercises lists$/ do |n|
     assert_equal n.to_i, ExercisesList.all.count
   end
 end
+
+# ----- lectures --------
+
+Given /^the following lectures:$/ do |lectures|
+	Lecture.create!(lectures.hashes)
+	Then %{there should be #{lectures.hashes.length} lectures}
+end
+
+Then /^there should be (.*) lectures$/ do |n|
+	if defined?(Spec::Rails::Matchers)
+    Lecture.all.count.should == n.to_i
+  else
+    assert_equal n.to_i, Lecture.all.count
+  end
+end
