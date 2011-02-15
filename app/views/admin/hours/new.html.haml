@@ -2,7 +2,7 @@
 
 %h2 Dodaj termin zajęć
 
-- form_for [:admin, @hour.subject, @hour] do |f|
+= form_for [:admin, @hour.subject, @hour] do |f|
   =render :partial => "hours_form", :locals => { :f => f, :hour => @hour }
 
   %p= f.submit "Dodaj"
