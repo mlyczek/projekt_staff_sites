@@ -14,6 +14,8 @@ group :test do
 	gem 'capybara', '0.4.0'
 	gem 'cucumber-rails', '0.3.2'
 	gem 'cucumber', '0.9.4'
+
+	gem 'launchy', '0.3.7'
 end
 
 # Use unicorn as the web server
