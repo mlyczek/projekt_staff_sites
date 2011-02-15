@@ -2,7 +2,7 @@
 
 %h2 Edytuj publikację
 
-- form_for [:admin, @pub] do |f|
+= form_for [:admin, @pub] do |f|
   - if @pub.errors.any?
     %div.errors
       %ul

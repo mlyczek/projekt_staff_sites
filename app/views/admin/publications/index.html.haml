@@ -23,6 +23,6 @@
 
 %h3 Dodaj nową publikację
 
-- form_for [:admin, @pub] do |f|
+= form_for [:admin, @pub] do |f|
   = render :partial => "publications_form", :locals => { :f => f }
   %p= f.submit "Dodaj"
