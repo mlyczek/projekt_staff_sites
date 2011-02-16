@@ -94,3 +94,18 @@ Then /^there should be (.*) lectures$/ do |n|
     assert_equal n.to_i, Lecture.all.count
   end
 end
+
+# ----- event types ------
+
+Given /^db has event types$/ do
+	EventTypeColor.create(:name => "Niebieski", :css_class => "ii_classes");
+	EventTypeColor.create(:name => "Zielony", :css_class => "not_ii");
+	EventTypeColor.create(:name => "Fioletowy", :css_class => "violet");
+	EventTypeColor.create(:name => "Fioletowy 2", :css_class => "violet2");
+	EventTypeColor.create(:name => "Czerwony", :css_class => "red");
+	EventTypeColor.create(:name => "Żółty", :css_class => "yellow");
+	EventTypeColor.create(:name => "Pomarańczowy", :css_class => "orange");
+
+	EventType.create(:name => "Zajęcia w ii", :event_type_color_id => 1, :editable => false)
+	EventType.create(:name => "Zajęcia poza ii", :event_type_color_id => 2, :editable => false)
+end

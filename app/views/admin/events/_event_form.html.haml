@@ -10,7 +10,7 @@
   = f.label :event_type_id, "Typ"
   = f.collection_select :event_type_id, event.timetable.event_types_with_default, :id, :name
 %p
-  = f.label :week_day
+  = f.label :week_day, "Dzień tygodnia"
   = f.select :week_day, [["poniedziałek"], ["wtorek"], ["środa"], ["czwartek"], ["piątek"], ["sobota"], ["niedziela"]]
 %p
   = f.label :start, "Godziny"
